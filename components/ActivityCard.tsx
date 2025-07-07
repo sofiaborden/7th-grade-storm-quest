@@ -52,7 +52,7 @@ const ActivityCard: React.FC<ActivityCardProps> = ({ activity, onToggleComplete 
             : 'border-slate-400 dark:border-slate-600 bg-white dark:bg-slate-900 hover:border-sky-400 dark:hover:border-sky-500'}
         `}
       >
-        {isCompleted && <CheckIcon className="w-5 h-5 text-white" />}
+        {isCompleted && <CheckIcon className="w-5 h-5 text-white stroke-2 drop-shadow-lg" />}
       </button>
 
       <div className="flex-grow flex items-center gap-3">

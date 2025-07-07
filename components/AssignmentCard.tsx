@@ -68,7 +68,7 @@ const AssignmentCard: React.FC<AssignmentCardProps> = ({ assignment, onToggleCom
             : 'border-slate-400 dark:border-slate-500 bg-white dark:bg-slate-800 hover:border-green-400 dark:hover:border-green-500 hover:bg-green-50 dark:hover:bg-green-900/30'}
         `}
       >
-        {isCompleted && <CheckIcon className="w-5 h-5 text-white" />}
+        {isCompleted && <CheckIcon className="w-5 h-5 text-white stroke-2 drop-shadow-lg" />}
         {!isCompleted && (
           <div className="w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-600 group-hover:bg-green-400 transition-colors duration-200"></div>
         )}
