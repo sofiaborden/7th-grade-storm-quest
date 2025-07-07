@@ -249,6 +249,7 @@ const App: React.FC = () => {
                   onToggleComplete={handleToggleItemComplete}
                   isToday={toISODateString(viewDate) === toISODateString(getEffectiveStartDate())}
                   allPrimaryTasksDone={allPrimaryTasksDoneForViewDate}
+                  completedActivities={completedActivities[toISODateString(viewDate)] || []}
                 />
               </div>
             )}

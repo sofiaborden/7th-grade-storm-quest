@@ -10,9 +10,10 @@ interface DayScheduleProps {
   onToggleComplete: (item: ScheduledItem) => void;
   isToday: boolean;
   allPrimaryTasksDone: boolean;
+  completedActivities: string[];
 }
 
-const DaySchedule: React.FC<DayScheduleProps> = ({ day, onToggleComplete, isToday, allPrimaryTasksDone }) => {
+const DaySchedule: React.FC<DayScheduleProps> = ({ day, onToggleComplete, isToday, allPrimaryTasksDone, completedActivities }) => {
   const [showBonus, setShowBonus] = useState(false);
   
   const dateObj = new Date(day.date);
@@ -95,7 +96,7 @@ const DaySchedule: React.FC<DayScheduleProps> = ({ day, onToggleComplete, isToda
               return <AssignmentCard key={item.id} assignment={item} onToggleComplete={() => onToggleComplete(item)} />;
             }
             if (item.type === 'Activity') {
-              return <ActivityCard key={item.id} activity={item} onToggleComplete={() => onToggleComplete(item)} />;
+              return <ActivityCard key={item.id} activity={item} onToggleComplete={() => onToggleComplete(item)} isCompleted={completedActivities.includes(item.id)} />;
             }
             return null;
           })

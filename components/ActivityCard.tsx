@@ -6,6 +6,7 @@ import { BookIcon, GuitarIcon, GolfIcon, BandIcon, DumbbellIcon, LunchIcon, BedI
 interface ActivityCardProps {
   activity: Activity;
   onToggleComplete: () => void;
+  isCompleted: boolean;
 }
 
 const ICONS: { [key: string]: React.ElementType } = {
@@ -19,10 +20,9 @@ const ICONS: { [key: string]: React.ElementType } = {
   Math: () => <span className="font-bold text-lg font-orbitron">M+</span> // Custom for Math Tutoring
 };
 
-const ActivityCard: React.FC<ActivityCardProps> = ({ activity, onToggleComplete }) => {
+const ActivityCard: React.FC<ActivityCardProps> = ({ activity, onToggleComplete, isCompleted }) => {
   const [isAnimating, setIsAnimating] = useState(false);
   const Icon = ICONS[activity.icon];
-  const isCompleted = !!activity.completionDate;
   
   const handleToggle = () => {
     if (!isCompleted) {
