@@ -1,0 +1,5 @@
+{
+  "name": "7th Grade Storm Quest",
+  "description": "An assignment planner with an extreme weather theme to help a 7th grader manage their schoolwork. It visualizes the schedule, tracks progress, and estimates a finish date based on daily goals.",
+  "requestFramePermissions": []
+}
