@@ -185,7 +185,7 @@ const App: React.FC = () => {
   }, [allDone, assignments]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-sky-50/30 to-blue-50/30 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700 transition-all duration-500">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50/95 via-sky-50/40 to-blue-50/40 dark:from-slate-900/98 dark:via-slate-800/98 dark:to-slate-700/98 transition-all duration-500 backdrop-blur-sm">
       <Header
         completedCount={completedCount}
         totalCount={assignments.length}
@@ -199,7 +199,7 @@ const App: React.FC = () => {
         dailyStreak={dailyStreak}
         estimatedFinishDate={estimatedFinishDate}
       />
-      <main className="p-4 sm:p-6">
+      <main className="p-4 sm:p-6 animate-fade-in">
         <div className="max-w-6xl mx-auto">
           {/* Top section with motivational panel and quick actions */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">

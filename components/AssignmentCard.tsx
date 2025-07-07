@@ -42,15 +42,15 @@ const AssignmentCard: React.FC<AssignmentCardProps> = ({ assignment, onToggleCom
   return (
     <div
       className={`
-        relative flex items-start gap-4 p-4 rounded-xl transition-all duration-300 hover:scale-[1.02]
+        relative flex items-start gap-4 p-5 rounded-2xl transition-all duration-300 hover:scale-[1.01] hover:-translate-y-1
         ${isCompleted
-          ? 'bg-green-50/80 dark:bg-green-900/30 border-green-200 dark:border-green-700 opacity-75'
-          : 'bg-white/95 dark:bg-slate-800/95 border-slate-200 dark:border-slate-600 hover:shadow-lg hover:shadow-sky-200/50 dark:hover:shadow-sky-900/50'
+          ? 'bg-green-50/90 dark:bg-green-900/20 border-green-200/60 dark:border-green-700/40 opacity-80'
+          : 'bg-white/98 dark:bg-slate-800/98 border-slate-200/60 dark:border-slate-600/40 hover:shadow-xl hover:shadow-sky-200/30 dark:hover:shadow-sky-900/30'
         }
-        border-2 overflow-hidden group
+        border overflow-hidden group backdrop-blur-sm
       `}
     >
-      <div className={`absolute left-0 top-0 bottom-0 w-2 ${isCompleted ? 'bg-green-500' : colors.base.split(' ')[0]} shadow-lg ${colors.neon}`}></div>
+      <div className={`absolute left-0 top-0 bottom-0 w-1 ${isCompleted ? 'bg-green-500' : colors.base.split(' ')[0]} ${colors.neon}`}></div>
 
       {/* Weather indicator */}
       <div className="absolute top-2 right-2 text-2xl" title={`${weather.description} - ${weather.emoji}`}>
@@ -61,11 +61,11 @@ const AssignmentCard: React.FC<AssignmentCardProps> = ({ assignment, onToggleCom
         onClick={handleToggle}
         aria-label={`Mark ${assignment.name} as ${isCompleted ? 'incomplete' : 'complete'}`}
         className={`
-          flex-shrink-0 w-8 h-8 rounded-full border-3 transition-all duration-300 transform
-          flex items-center justify-center mt-1 hover:scale-110
+          flex-shrink-0 w-9 h-9 rounded-xl border-2 transition-all duration-300 transform
+          flex items-center justify-center mt-0.5 hover:scale-105 active:scale-95
           ${isCompleted
-            ? 'bg-green-500 border-green-500 shadow-lg shadow-green-400/50'
-            : 'border-slate-400 dark:border-slate-400 bg-white dark:bg-slate-700 hover:border-green-400 dark:hover:border-green-500 hover:bg-green-50 dark:hover:bg-green-900/30'}
+            ? 'bg-green-500 border-green-500 shadow-lg shadow-green-400/40'
+            : 'border-slate-300 dark:border-slate-500 bg-white dark:bg-slate-700 hover:border-green-400 dark:hover:border-green-500 hover:bg-green-50 dark:hover:bg-green-900/30 hover:shadow-md'}
         `}
       >
         {isCompleted && <CheckIcon className="w-5 h-5 text-white stroke-2 drop-shadow-lg" />}
@@ -81,17 +81,17 @@ const AssignmentCard: React.FC<AssignmentCardProps> = ({ assignment, onToggleCom
           {assignment.name}
         </p>
 
-        <div className="flex items-center gap-3 mb-2">
+        <div className="flex items-center gap-3 mb-3">
           <span
-            className={`text-xs font-bold px-3 py-1.5 rounded-full ${subjectColor} shadow-sm`}
+            className={`text-xs font-semibold px-3 py-1.5 rounded-xl ${subjectColor} shadow-sm`}
           >
             {assignment.subject}
           </span>
-          <span className="flex items-center gap-1 text-sm font-bold text-amber-600 dark:text-amber-300">
+          <span className="flex items-center gap-1.5 text-sm font-semibold text-amber-600 dark:text-amber-300">
             <LightningIcon className="w-4 h-4" />
             +{assignment.xp} Energy
           </span>
-          <span className={`text-xs font-medium ${weather.color}`}>
+          <span className={`text-xs font-medium px-2 py-1 rounded-lg ${weather.color} bg-white/50 dark:bg-slate-800/50`}>
             {weather.description}
           </span>
         </div>

@@ -35,28 +35,28 @@ const ActivityCard: React.FC<ActivityCardProps> = ({ activity, onToggleComplete,
   return (
     <div
       className={`
-        relative flex items-start gap-4 p-3 rounded-lg transition-all duration-300
-        bg-slate-200/80 dark:bg-slate-800/80 border border-slate-300/60 dark:border-slate-700/60
-        overflow-hidden
-        ${isCompleted ? 'opacity-60' : 'hover:bg-slate-200/95 dark:hover:bg-slate-700/90'}
+        relative flex items-start gap-4 p-4 rounded-xl transition-all duration-300 hover:-translate-y-0.5
+        bg-slate-100/90 dark:bg-slate-800/90 border border-slate-200/60 dark:border-slate-700/40
+        overflow-hidden backdrop-blur-sm
+        ${isCompleted ? 'opacity-70' : 'hover:bg-slate-50/95 dark:hover:bg-slate-700/95 hover:shadow-md hover:shadow-slate-200/50 dark:hover:shadow-slate-900/50'}
       `}
     >
       <button
         onClick={handleToggle}
         aria-label={`Mark ${activity.title} as ${isCompleted ? 'incomplete' : 'complete'}`}
         className={`
-          flex-shrink-0 w-7 h-7 rounded-md border-2 transition-all duration-200
+          flex-shrink-0 w-8 h-8 rounded-lg border-2 transition-all duration-200 hover:scale-105 active:scale-95
           flex items-center justify-center mt-0.5
-          ${isCompleted 
-            ? 'bg-sky-500 border-sky-500' 
-            : 'border-slate-400 dark:border-slate-600 bg-white dark:bg-slate-900 hover:border-sky-400 dark:hover:border-sky-500'}
+          ${isCompleted
+            ? 'bg-sky-500 border-sky-500 shadow-md shadow-sky-400/40'
+            : 'border-slate-300 dark:border-slate-500 bg-white dark:bg-slate-800 hover:border-sky-400 dark:hover:border-sky-500 hover:shadow-sm'}
         `}
       >
         {isCompleted && <CheckIcon className="w-5 h-5 text-white stroke-2 drop-shadow-lg" />}
       </button>
 
       <div className="flex-grow flex items-center gap-3">
-        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white/80 dark:bg-slate-600/80 flex items-center justify-center text-slate-500 dark:text-slate-200">
+        <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-white/90 dark:bg-slate-600/90 flex items-center justify-center text-slate-500 dark:text-slate-200 shadow-sm">
             {Icon && <Icon className="w-5 h-5" />}
         </div>
         <div>

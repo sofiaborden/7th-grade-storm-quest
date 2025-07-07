@@ -47,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="bg-gradient-to-r from-slate-100/95 via-sky-50/95 to-slate-100/95 dark:from-slate-900/95 dark:via-slate-800/95 dark:to-slate-900/95 backdrop-blur-lg sticky top-0 z-20 border-b border-slate-300/70 dark:border-slate-600/70 shadow-lg">
+    <header className="bg-gradient-to-r from-white/98 via-sky-50/98 to-white/98 dark:from-slate-900/98 dark:via-slate-800/98 dark:to-slate-900/98 backdrop-blur-xl sticky top-0 z-20 border-b border-slate-200/50 dark:border-slate-600/50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         
         <div className="flex justify-between items-center mb-4">
@@ -117,9 +117,9 @@ const Header: React.FC<HeaderProps> = ({
 };
 
 const StatCard: React.FC<{label:string, value: string | number, icon?: React.ReactNode}> = ({label, value, icon}) => (
-    <div className="bg-slate-100 dark:bg-slate-700/80 p-2 rounded-md border border-slate-300/70 dark:border-slate-600/70">
-        <p className="text-xs font-semibold text-slate-500 dark:text-slate-300 uppercase tracking-wider">{label}</p>
-        <div className="flex items-center justify-center gap-1">
+    <div className="bg-white/90 dark:bg-slate-700/90 p-3 rounded-xl border border-slate-200/60 dark:border-slate-600/60 shadow-sm backdrop-blur-sm">
+        <p className="text-xs font-semibold text-slate-500 dark:text-slate-300 uppercase tracking-wider mb-1">{label}</p>
+        <div className="flex items-center justify-center gap-1.5">
             {icon}
             <p className="text-lg font-bold font-orbitron text-slate-700 dark:text-slate-200">{value}</p>
         </div>

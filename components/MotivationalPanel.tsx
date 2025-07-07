@@ -80,7 +80,7 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
   const motivation = getMotivationalMessage();
 
   return (
-    <div className="bg-gradient-to-br from-sky-50 via-blue-50 to-indigo-50 dark:from-slate-800 dark:via-slate-700 dark:to-slate-800 rounded-xl p-6 border-2 border-sky-200 dark:border-slate-600 shadow-lg">
+    <div className="bg-gradient-to-br from-sky-50/90 via-blue-50/90 to-indigo-50/90 dark:from-slate-800/95 dark:via-slate-700/95 dark:to-slate-800/95 rounded-2xl p-6 border border-sky-200/60 dark:border-slate-600/40 shadow-lg backdrop-blur-sm">
       <div className="text-center mb-4">
         <div className="text-4xl mb-2 animate-bounce">{motivation.emoji}</div>
         <h3 className={`text-lg font-bold ${motivation.color} mb-1`}>
@@ -107,19 +107,19 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
 
       {/* Quick stats */}
       <div className="grid grid-cols-2 gap-4 mb-4">
-        <div className="text-center p-3 bg-white/50 dark:bg-slate-900/50 rounded-lg">
+        <div className="text-center p-4 bg-white/70 dark:bg-slate-900/70 rounded-xl shadow-sm backdrop-blur-sm">
           <div className="text-2xl font-bold text-orange-600 dark:text-orange-300">
             {currentStreak}
           </div>
-          <div className="text-xs text-slate-600 dark:text-slate-300">
+          <div className="text-xs text-slate-600 dark:text-slate-300 font-medium">
             Day Streak 🔥
           </div>
         </div>
-        <div className="text-center p-3 bg-white/50 dark:bg-slate-900/50 rounded-lg">
+        <div className="text-center p-4 bg-white/70 dark:bg-slate-900/70 rounded-xl shadow-sm backdrop-blur-sm">
           <div className="text-2xl font-bold text-purple-600 dark:text-purple-300">
             {level}
           </div>
-          <div className="text-xs text-slate-600 dark:text-slate-300">
+          <div className="text-xs text-slate-600 dark:text-slate-300 font-medium">
             Level ⚡
           </div>
         </div>
@@ -128,7 +128,7 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
       {/* Quick boost button */}
       <button
         onClick={handleEncouragementClick}
-        className="w-full py-3 px-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+        className="w-full py-4 px-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-[1.02] hover:-translate-y-0.5 shadow-lg hover:shadow-xl active:scale-[0.98]"
       >
         {showEncouragement ? '⚡ Nice work!' : '⚡ Quick boost'}
       </button>

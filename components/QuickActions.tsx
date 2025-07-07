@@ -24,7 +24,7 @@ const QuickActions: React.FC<QuickActionsProps> = ({
   };
 
   return (
-    <div className="bg-white dark:bg-slate-800 rounded-xl p-4 border-2 border-slate-200 dark:border-slate-700 shadow-lg">
+    <div className="bg-white/98 dark:bg-slate-800/98 rounded-2xl p-5 border border-slate-200/60 dark:border-slate-700/40 shadow-lg backdrop-blur-sm">
       <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 mb-4 text-center">
         ⚡ Quick Storm Actions ⚡
       </h3>
@@ -34,7 +34,7 @@ const QuickActions: React.FC<QuickActionsProps> = ({
         {easiestTask && (
           <button
             onClick={quickCompleteEasiest}
-            className="w-full p-3 bg-gradient-to-r from-green-400 to-emerald-500 hover:from-green-500 hover:to-emerald-600 text-white font-bold rounded-lg transition-all duration-200 transform hover:scale-105 shadow-md"
+            className="w-full p-4 bg-gradient-to-r from-green-400 to-emerald-500 hover:from-green-500 hover:to-emerald-600 text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-[1.02] hover:-translate-y-0.5 shadow-lg hover:shadow-xl active:scale-[0.98]"
           >
             <div className="flex items-center justify-between">
               <span>⚡ Easy Start</span>
@@ -56,7 +56,7 @@ const QuickActions: React.FC<QuickActionsProps> = ({
         {/* View all subjects */}
         <button
           onClick={onViewSubjects}
-          className="w-full p-3 bg-gradient-to-r from-blue-400 to-purple-500 hover:from-blue-500 hover:to-purple-600 text-white font-bold rounded-lg transition-all duration-200 transform hover:scale-105 shadow-md"
+          className="w-full p-4 bg-gradient-to-r from-blue-400 to-purple-500 hover:from-blue-500 hover:to-purple-600 text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-[1.02] hover:-translate-y-0.5 shadow-lg hover:shadow-xl active:scale-[0.98]"
         >
           <div className="flex items-center justify-center gap-2">
             <span>📚</span>
