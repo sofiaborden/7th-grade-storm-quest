@@ -59,7 +59,7 @@ const DaySchedule: React.FC<DayScheduleProps> = ({ day, onToggleComplete, isToda
       </div>
       
       {allPrimaryTasksDone && (
-         <div className="text-center mb-6 py-8 px-4 rounded-lg shadow-2xl border-2 border-cyan-400/50 dark:border-cyan-600/50 bg-gradient-to-br from-slate-50 to-cyan-100 dark:from-slate-900 dark:to-cyan-950">
+         <div className="text-center mb-6 py-8 px-4 rounded-lg shadow-2xl border-2 border-cyan-400/50 dark:border-cyan-500/60 bg-gradient-to-br from-slate-50 to-cyan-100 dark:from-slate-800 dark:to-cyan-900">
           <style>{`
               @keyframes fade-in-scale { 0% { opacity: 0; transform: scale(0.95); } 100% { opacity: 1; transform: scale(1); } }
               .animate-fade-in-scale { animation: fade-in-scale 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
@@ -101,14 +101,14 @@ const DaySchedule: React.FC<DayScheduleProps> = ({ day, onToggleComplete, isToda
             return null;
           })
         ) : (
-          <div className="text-center py-16 px-6 bg-slate-100 dark:bg-slate-900/50 rounded-lg shadow-sm border border-slate-200 dark:border-slate-800">
+          <div className="text-center py-16 px-6 bg-slate-100 dark:bg-slate-800/70 rounded-lg shadow-sm border border-slate-200 dark:border-slate-600">
             <h3 className="text-lg font-semibold text-slate-700 dark:text-slate-300">Clear Skies!</h3>
             <p className="mt-2 text-slate-500 dark:text-slate-400">No assignments scheduled for today. Enjoy the calm!</p>
           </div>
         )}
         
         {showBonus && day.bonusItems && day.bonusItems.length > 0 && (
-            <div className="pt-4 space-y-4 border-t-2 border-dashed border-slate-300 dark:border-slate-700 mt-6">
+            <div className="pt-4 space-y-4 border-t-2 border-dashed border-slate-300 dark:border-slate-600 mt-6">
                 <h4 className="font-orbitron font-bold text-lg text-slate-700 dark:text-sky-300">Bonus Storms</h4>
                 {day.bonusItems.map(item => (
                     <AssignmentCard key={`bonus-${item.id}`} assignment={item} onToggleComplete={() => onToggleComplete(item)} />

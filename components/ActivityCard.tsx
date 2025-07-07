@@ -36,9 +36,9 @@ const ActivityCard: React.FC<ActivityCardProps> = ({ activity, onToggleComplete,
     <div
       className={`
         relative flex items-start gap-4 p-3 rounded-lg transition-all duration-300
-        bg-slate-200/60 dark:bg-slate-800/60 border border-slate-300/50 dark:border-slate-800/50
+        bg-slate-200/80 dark:bg-slate-800/80 border border-slate-300/60 dark:border-slate-700/60
         overflow-hidden
-        ${isCompleted ? 'opacity-60' : 'hover:bg-slate-200/90 dark:hover:bg-slate-800/90'}
+        ${isCompleted ? 'opacity-60' : 'hover:bg-slate-200/95 dark:hover:bg-slate-700/90'}
       `}
     >
       <button
@@ -56,7 +56,7 @@ const ActivityCard: React.FC<ActivityCardProps> = ({ activity, onToggleComplete,
       </button>
 
       <div className="flex-grow flex items-center gap-3">
-        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white/70 dark:bg-slate-700/70 flex items-center justify-center text-slate-500 dark:text-slate-300">
+        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white/80 dark:bg-slate-600/80 flex items-center justify-center text-slate-500 dark:text-slate-200">
             {Icon && <Icon className="w-5 h-5" />}
         </div>
         <div>

@@ -44,8 +44,8 @@ const AssignmentCard: React.FC<AssignmentCardProps> = ({ assignment, onToggleCom
       className={`
         relative flex items-start gap-4 p-4 rounded-xl transition-all duration-300 hover:scale-[1.02]
         ${isCompleted
-          ? 'bg-green-50/80 dark:bg-green-900/20 border-green-200 dark:border-green-800 opacity-75'
-          : 'bg-white/90 dark:bg-slate-800/90 border-slate-200 dark:border-slate-700 hover:shadow-lg hover:shadow-sky-200/50 dark:hover:shadow-sky-900/50'
+          ? 'bg-green-50/80 dark:bg-green-900/30 border-green-200 dark:border-green-700 opacity-75'
+          : 'bg-white/95 dark:bg-slate-800/95 border-slate-200 dark:border-slate-600 hover:shadow-lg hover:shadow-sky-200/50 dark:hover:shadow-sky-900/50'
         }
         border-2 overflow-hidden group
       `}
@@ -65,12 +65,12 @@ const AssignmentCard: React.FC<AssignmentCardProps> = ({ assignment, onToggleCom
           flex items-center justify-center mt-1 hover:scale-110
           ${isCompleted
             ? 'bg-green-500 border-green-500 shadow-lg shadow-green-400/50'
-            : 'border-slate-400 dark:border-slate-500 bg-white dark:bg-slate-800 hover:border-green-400 dark:hover:border-green-500 hover:bg-green-50 dark:hover:bg-green-900/30'}
+            : 'border-slate-400 dark:border-slate-400 bg-white dark:bg-slate-700 hover:border-green-400 dark:hover:border-green-500 hover:bg-green-50 dark:hover:bg-green-900/30'}
         `}
       >
         {isCompleted && <CheckIcon className="w-5 h-5 text-white stroke-2 drop-shadow-lg" />}
         {!isCompleted && (
-          <div className="w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-600 group-hover:bg-green-400 transition-colors duration-200"></div>
+          <div className="w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-400 group-hover:bg-green-400 transition-colors duration-200"></div>
         )}
       </button>
 

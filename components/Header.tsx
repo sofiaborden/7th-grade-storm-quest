@@ -47,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="bg-gradient-to-r from-slate-100/90 via-sky-50/90 to-slate-100/90 dark:from-slate-950/90 dark:via-slate-900/90 dark:to-slate-950/90 backdrop-blur-lg sticky top-0 z-20 border-b border-slate-300/70 dark:border-slate-800/70 shadow-lg">
+    <header className="bg-gradient-to-r from-slate-100/95 via-sky-50/95 to-slate-100/95 dark:from-slate-900/95 dark:via-slate-800/95 dark:to-slate-900/95 backdrop-blur-lg sticky top-0 z-20 border-b border-slate-300/70 dark:border-slate-600/70 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         
         <div className="flex justify-between items-center mb-4">
@@ -75,7 +75,7 @@ const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-slate-200/60 via-sky-100/60 to-slate-200/60 dark:from-slate-900/60 dark:via-slate-800/60 dark:to-slate-900/60 rounded-xl p-4 border border-slate-300/70 dark:border-slate-700/70 shadow-xl backdrop-blur-sm">
+        <div className="bg-gradient-to-br from-slate-200/80 via-sky-100/80 to-slate-200/80 dark:from-slate-800/80 dark:via-slate-700/80 dark:to-slate-800/80 rounded-xl p-4 border border-slate-300/70 dark:border-slate-600/70 shadow-xl backdrop-blur-sm">
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                 <div className="flex-shrink-0 text-center">
                     <div
@@ -117,7 +117,7 @@ const Header: React.FC<HeaderProps> = ({
 };
 
 const StatCard: React.FC<{label:string, value: string | number, icon?: React.ReactNode}> = ({label, value, icon}) => (
-    <div className="bg-slate-100 dark:bg-slate-800/70 p-2 rounded-md border border-slate-300/70 dark:border-slate-700/70">
+    <div className="bg-slate-100 dark:bg-slate-700/80 p-2 rounded-md border border-slate-300/70 dark:border-slate-600/70">
         <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">{label}</p>
         <div className="flex items-center justify-center gap-1">
             {icon}

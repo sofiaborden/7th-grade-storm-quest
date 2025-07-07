@@ -185,7 +185,7 @@ const App: React.FC = () => {
   }, [allDone, assignments]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-sky-50/30 to-blue-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 transition-all duration-500 storm-pattern">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-sky-50/30 to-blue-50/30 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700 transition-all duration-500 storm-pattern">
       <Header
         completedCount={completedCount}
         totalCount={assignments.length}
