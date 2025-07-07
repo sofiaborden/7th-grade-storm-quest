@@ -23,7 +23,7 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
       return {
         emoji: '🌅',
         message: "Ready to tackle today's work?",
-        color: 'text-blue-600 dark:text-blue-400'
+        color: 'text-blue-600 dark:text-blue-300'
       };
     }
 
@@ -31,7 +31,7 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
       return {
         emoji: '🏆',
         message: "All done. Nice work today.",
-        color: 'text-green-600 dark:text-green-400'
+        color: 'text-green-600 dark:text-green-300'
       };
     }
 
@@ -39,7 +39,7 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
       return {
         emoji: '⚡',
         message: "Almost finished - solid progress",
-        color: 'text-yellow-600 dark:text-yellow-400'
+        color: 'text-yellow-600 dark:text-yellow-300'
       };
     }
 
@@ -47,7 +47,7 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
       return {
         emoji: '🌪️',
         message: "Halfway there - keep it up",
-        color: 'text-purple-600 dark:text-purple-400'
+        color: 'text-purple-600 dark:text-purple-300'
       };
     }
 
@@ -55,14 +55,14 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
       return {
         emoji: '🌤️',
         message: "Good start - building momentum",
-        color: 'text-orange-600 dark:text-orange-400'
+        color: 'text-orange-600 dark:text-orange-300'
       };
     }
 
     return {
       emoji: '☀️',
       message: "Pick a task and get started",
-      color: 'text-sky-600 dark:text-sky-400'
+      color: 'text-sky-600 dark:text-sky-300'
     };
   };
 
@@ -86,14 +86,14 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
         <h3 className={`text-lg font-bold ${motivation.color} mb-1`}>
           {motivation.message}
         </h3>
-        <p className="text-sm text-slate-600 dark:text-slate-400">
+        <p className="text-sm text-slate-600 dark:text-slate-300">
           {completedToday} of {totalToday} assignments completed today
         </p>
       </div>
 
       {/* Progress visualization */}
       <div className="mb-4">
-        <div className="flex justify-between text-xs text-slate-600 dark:text-slate-400 mb-1">
+        <div className="flex justify-between text-xs text-slate-600 dark:text-slate-300 mb-1">
           <span>Today's Progress</span>
           <span>{Math.round(completionPercentage)}%</span>
         </div>
@@ -108,18 +108,18 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
       {/* Quick stats */}
       <div className="grid grid-cols-2 gap-4 mb-4">
         <div className="text-center p-3 bg-white/50 dark:bg-slate-900/50 rounded-lg">
-          <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">
+          <div className="text-2xl font-bold text-orange-600 dark:text-orange-300">
             {currentStreak}
           </div>
-          <div className="text-xs text-slate-600 dark:text-slate-400">
+          <div className="text-xs text-slate-600 dark:text-slate-300">
             Day Streak 🔥
           </div>
         </div>
         <div className="text-center p-3 bg-white/50 dark:bg-slate-900/50 rounded-lg">
-          <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+          <div className="text-2xl font-bold text-purple-600 dark:text-purple-300">
             {level}
           </div>
-          <div className="text-xs text-slate-600 dark:text-slate-400">
+          <div className="text-xs text-slate-600 dark:text-slate-300">
             Level ⚡
           </div>
         </div>
@@ -135,10 +135,10 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
 
       {/* Strategy tips */}
       <div className="mt-4 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-200 dark:border-slate-700">
-        <h4 className="text-sm font-bold text-slate-700 dark:text-slate-300 mb-1">
+        <h4 className="text-sm font-bold text-slate-700 dark:text-slate-200 mb-1">
           💡 Strategy:
         </h4>
-        <p className="text-xs text-slate-600 dark:text-slate-400">
+        <p className="text-xs text-slate-600 dark:text-slate-300">
           {completionPercentage < 25
             ? "Start with easier tasks (☀️) to build momentum"
             : completionPercentage < 75

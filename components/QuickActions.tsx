@@ -25,7 +25,7 @@ const QuickActions: React.FC<QuickActionsProps> = ({
 
   return (
     <div className="bg-white dark:bg-slate-800 rounded-xl p-4 border-2 border-slate-200 dark:border-slate-700 shadow-lg">
-      <h3 className="text-lg font-bold text-slate-800 dark:text-slate-200 mb-4 text-center">
+      <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 mb-4 text-center">
         ⚡ Quick Storm Actions ⚡
       </h3>
       
@@ -67,18 +67,18 @@ const QuickActions: React.FC<QuickActionsProps> = ({
         {/* Motivational stats */}
         <div className="grid grid-cols-2 gap-2">
           <div className="p-2 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg text-center border border-yellow-200 dark:border-yellow-800">
-            <div className="text-lg font-bold text-yellow-600 dark:text-yellow-400">
+            <div className="text-lg font-bold text-yellow-600 dark:text-yellow-300">
               {incompleteAssignments.length}
             </div>
-            <div className="text-xs text-yellow-700 dark:text-yellow-300">
+            <div className="text-xs text-yellow-700 dark:text-yellow-200">
               Tasks Left
             </div>
           </div>
           <div className="p-2 bg-purple-50 dark:bg-purple-900/20 rounded-lg text-center border border-purple-200 dark:border-purple-800">
-            <div className="text-lg font-bold text-purple-600 dark:text-purple-400">
+            <div className="text-lg font-bold text-purple-600 dark:text-purple-300">
               {assignments.filter(a => a.completionDate).length}
             </div>
-            <div className="text-xs text-purple-700 dark:text-purple-300">
+            <div className="text-xs text-purple-700 dark:text-purple-200">
               Completed
             </div>
           </div>
@@ -86,7 +86,7 @@ const QuickActions: React.FC<QuickActionsProps> = ({
 
         {/* Difficulty preview */}
         <div className="p-3 bg-gradient-to-r from-sky-50 to-blue-50 dark:from-sky-900/20 dark:to-blue-900/20 rounded-lg border border-sky-200 dark:border-sky-800">
-          <h4 className="text-sm font-bold text-sky-800 dark:text-sky-200 mb-2">
+          <h4 className="text-sm font-bold text-sky-800 dark:text-sky-100 mb-2">
             📊 Upcoming Tasks:
           </h4>
           <div className="flex justify-between text-xs">
@@ -95,7 +95,7 @@ const QuickActions: React.FC<QuickActionsProps> = ({
               return (
                 <div key={assignment.id} className="text-center">
                   <div className="text-lg">{weather.emoji}</div>
-                  <div className="text-xs text-slate-600 dark:text-slate-400">
+                  <div className="text-xs text-slate-600 dark:text-slate-300">
                     {assignment.subject.slice(0, 4)}
                   </div>
                 </div>

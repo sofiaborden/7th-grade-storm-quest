@@ -33,10 +33,10 @@ const XPBar: React.FC<XPBarProps> = ({ progress, currentXp, xpToNextLevel }) => 
   return (
     <div className="w-full">
       <div className="flex justify-between items-end mb-2 text-sm">
-        <span className="font-semibold text-slate-600 dark:text-slate-300 flex items-center gap-1">
+        <span className="font-semibold text-slate-600 dark:text-slate-200 flex items-center gap-1">
           ⚡ Storm Energy ⚡
         </span>
-        <span className="font-bold text-slate-700 dark:text-slate-200 font-orbitron">
+        <span className="font-bold text-slate-700 dark:text-slate-100 font-orbitron">
           {currentXp.toLocaleString()} / {xpToNextLevel.toLocaleString()} J
         </span>
       </div>
@@ -58,7 +58,7 @@ const XPBar: React.FC<XPBarProps> = ({ progress, currentXp, xpToNextLevel }) => 
         )}
       </div>
       {progress >= 90 && (
-        <div className="text-center mt-1 text-xs font-bold text-green-600 dark:text-green-400 animate-bounce">
+        <div className="text-center mt-1 text-xs font-bold text-green-600 dark:text-green-300 animate-bounce">
           🌟 Almost there! Level up incoming! 🌟
         </div>
       )}

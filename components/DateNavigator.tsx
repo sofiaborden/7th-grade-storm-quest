@@ -8,8 +8,8 @@ interface DateNavigatorProps {
 }
 
 const DateNavigator: React.FC<DateNavigatorProps> = ({ onPrev, onNext, onToday }) => {
-  const buttonClass = "px-6 py-2 text-sm font-bold uppercase tracking-wider transition-colors duration-200 rounded-md bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 border-2 border-slate-300 dark:border-slate-700 shadow-md font-orbitron";
-  const iconButtonClass = "p-3 text-sm font-semibold transition-colors duration-200 rounded-full bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 border-2 border-slate-300 dark:border-slate-700 shadow-md";
+  const buttonClass = "px-6 py-2 text-sm font-bold uppercase tracking-wider transition-colors duration-200 rounded-md bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-100 hover:bg-slate-200 dark:hover:bg-slate-700 border-2 border-slate-300 dark:border-slate-600 shadow-md font-orbitron";
+  const iconButtonClass = "p-3 text-sm font-semibold transition-colors duration-200 rounded-full bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-100 hover:bg-slate-200 dark:hover:bg-slate-700 border-2 border-slate-300 dark:border-slate-600 shadow-md";
 
   return (
     <div className="flex items-center justify-between gap-4">

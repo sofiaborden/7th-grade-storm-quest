@@ -76,7 +76,7 @@ const AssignmentCard: React.FC<AssignmentCardProps> = ({ assignment, onToggleCom
 
       <div className="flex-grow pr-8">
         <p
-          className={`text-slate-800 dark:text-slate-200 font-bold text-lg leading-tight mb-2 ${isCompleted ? 'line-through text-green-600 dark:text-green-400' : ''}`}
+          className={`text-slate-800 dark:text-slate-100 font-bold text-lg leading-tight mb-2 ${isCompleted ? 'line-through text-green-600 dark:text-green-300' : ''}`}
         >
           {assignment.name}
         </p>
@@ -87,7 +87,7 @@ const AssignmentCard: React.FC<AssignmentCardProps> = ({ assignment, onToggleCom
           >
             {assignment.subject}
           </span>
-          <span className="flex items-center gap-1 text-sm font-bold text-amber-600 dark:text-amber-400">
+          <span className="flex items-center gap-1 text-sm font-bold text-amber-600 dark:text-amber-300">
             <LightningIcon className="w-4 h-4" />
             +{assignment.xp} Energy
           </span>
@@ -97,13 +97,13 @@ const AssignmentCard: React.FC<AssignmentCardProps> = ({ assignment, onToggleCom
         </div>
 
         {!isCompleted && (
-          <p className="text-xs text-slate-600 dark:text-slate-400 italic">
+          <p className="text-xs text-slate-600 dark:text-slate-300 italic">
             {getDifficultyMessage()}
           </p>
         )}
 
         {isCompleted && (
-          <p className="text-xs text-green-600 dark:text-green-400 font-medium">
+          <p className="text-xs text-green-600 dark:text-green-300 font-medium">
             ✅ Completed
           </p>
         )}

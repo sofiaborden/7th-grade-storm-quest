@@ -42,12 +42,12 @@ const ViewSubjectsModal: React.FC<ViewSubjectsModalProps> = ({
         onClick={e => e.stopPropagation()}
       >
         <header className="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between sticky top-0 bg-slate-100/80 dark:bg-slate-950/80 backdrop-blur-sm">
-          <h2 id="modal-title" className="text-xl font-bold text-slate-800 dark:text-cyan-400 font-orbitron uppercase">
+          <h2 id="modal-title" className="text-xl font-bold text-slate-800 dark:text-cyan-300 font-orbitron uppercase">
             Subject Logs
           </h2>
           <button
             onClick={onClose}
-            className="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800"
+            className="p-2 rounded-full text-slate-500 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800"
             aria-label="Close modal"
           >
             <XMarkIcon className="w-6 h-6" />
@@ -58,7 +58,7 @@ const ViewSubjectsModal: React.FC<ViewSubjectsModalProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {subjects.map(subject => (
               <div key={subject}>
-                <h3 className="font-bold text-lg text-slate-700 dark:text-slate-200 mb-3 font-orbitron">{subject}</h3>
+                <h3 className="font-bold text-lg text-slate-700 dark:text-slate-100 mb-3 font-orbitron">{subject}</h3>
                 <div className="space-y-3">
                     {assignmentsBySubject[subject]
                         .sort((a,b) => a.name.localeCompare(b.name))

@@ -60,12 +60,12 @@ const ActivityCard: React.FC<ActivityCardProps> = ({ activity, onToggleComplete,
             {Icon && <Icon className="w-5 h-5" />}
         </div>
         <div>
-            <p className={`text-slate-800 dark:text-slate-200 font-semibold text-base ${isCompleted ? 'line-through' : ''}`}>
+            <p className={`text-slate-800 dark:text-slate-100 font-semibold text-base ${isCompleted ? 'line-through' : ''}`}>
               {activity.title}
             </p>
              <div className="flex items-center gap-4">
-                <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">{activity.time}</span>
-                <span className="flex items-center gap-1 text-xs font-bold text-yellow-600 dark:text-yellow-400">
+                <span className="text-xs font-semibold text-slate-500 dark:text-slate-300">{activity.time}</span>
+                <span className="flex items-center gap-1 text-xs font-bold text-yellow-600 dark:text-yellow-300">
                     <LightningIcon className="w-3 h-3" />
                     +{activity.xp} J
                 </span>
