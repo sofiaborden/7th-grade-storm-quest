@@ -78,22 +78,31 @@ const Header: React.FC<HeaderProps> = ({
         <div className="bg-gradient-to-br from-slate-200/80 via-sky-100/80 to-slate-200/80 dark:from-slate-800/80 dark:via-slate-700/80 dark:to-slate-800/80 rounded-xl p-4 border border-slate-300/70 dark:border-slate-600/70 shadow-xl backdrop-blur-sm">
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                 <div className="flex-shrink-0 text-center">
-                    <div
-                        className="relative w-20 h-20 mx-auto group cursor-pointer transform transition-transform duration-300 hover:scale-110"
-                        onClick={handleLevelClick}
-                    >
-                        <TornadoIcon className="w-full h-full text-slate-500 dark:text-slate-200 group-hover:text-sky-500 transition-colors duration-300 animate-float" />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="flex items-baseline gap-1">
-                                <span className="font-orbitron font-bold text-2xl sm:text-3xl text-slate-800 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors duration-300">{level}</span>
-                                <span className="text-xs text-slate-500 dark:text-slate-200 font-semibold">CAT</span>
+                    <div className="flex flex-col items-center gap-2">
+                        {/* Tornado icon - clean and separate */}
+                        <div
+                            className="relative w-16 h-16 group cursor-pointer transform transition-transform duration-300 hover:scale-110"
+                            onClick={handleLevelClick}
+                        >
+                            <TornadoIcon className="w-full h-full text-slate-500 dark:text-slate-200 group-hover:text-sky-500 transition-colors duration-300 animate-float" />
+                            {level > 3 && (
+                                <div className="absolute -top-1 -right-1 w-5 h-5 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center animate-bounce">
+                                    <span className="text-xs font-bold text-white">🔥</span>
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Level text - clean and readable below tornado */}
+                        <div className="bg-white/90 dark:bg-slate-800/90 px-3 py-1.5 rounded-lg border border-slate-200/60 dark:border-slate-600/60 shadow-sm backdrop-blur-sm">
+                            <div className="flex items-baseline gap-1.5">
+                                <span className="font-orbitron font-bold text-xl sm:text-2xl text-slate-800 dark:text-white">
+                                    {level}
+                                </span>
+                                <span className="text-xs text-slate-600 dark:text-slate-300 font-semibold uppercase tracking-wider">
+                                    CAT
+                                </span>
                             </div>
                         </div>
-                        {level > 3 && (
-                            <div className="absolute -top-1 -right-1 w-6 h-6 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center animate-bounce">
-                                <span className="text-xs font-bold text-white">🔥</span>
-                            </div>
-                        )}
                     </div>
                 </div>
 
