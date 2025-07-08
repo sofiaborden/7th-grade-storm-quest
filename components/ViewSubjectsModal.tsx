@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Assignment } from '../types';
 import { XMarkIcon, CheckIcon, LightningIcon } from './icons';
 
@@ -16,6 +16,13 @@ const ViewSubjectsModal: React.FC<ViewSubjectsModalProps> = ({
   onToggleComplete,
 }) => {
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
+
+  // Auto-select first subject on mobile for better UX
+  useEffect(() => {
+    if (subjects.length > 0 && !selectedSubject) {
+      setSelectedSubject(subjects[0]);
+    }
+  }, [subjects, selectedSubject]);
 
   if (!isOpen) return null;
 
@@ -190,65 +197,89 @@ const ViewSubjectsModal: React.FC<ViewSubjectsModalProps> = ({
             </div>
           </div>
 
-          {/* Mobile: Stacked layout */}
-          <div className="sm:hidden h-full overflow-y-auto">
-            <div className="p-4 space-y-4">
-              {/* Mobile summary header */}
-              <div className="bg-blue-50/80 dark:bg-blue-900/20 rounded-xl p-3 border border-blue-200/60 dark:border-blue-700/60 mb-4">
-                <h3 className="font-semibold text-blue-800 dark:text-blue-200 text-sm mb-2">
-                  📊 Quick Overview
-                </h3>
-                <div className="grid grid-cols-2 gap-2 text-xs">
-                  <div className="text-slate-600 dark:text-slate-300">
-                    <span className="font-medium">{subjects.length}</span> subjects
+          {/* Mobile: Tab-based navigation */}
+          <div className="sm:hidden h-full flex flex-col">
+            {/* Mobile tab navigation */}
+            <div className="flex-shrink-0 p-3 border-b border-slate-200/60 dark:border-slate-600/80 bg-slate-50/50 dark:bg-slate-800/50">
+              <div className="flex gap-1 overflow-x-auto pb-2">
+                {subjects.map(subject => {
+                  const subjectAssignments = assignmentsBySubject[subject];
+                  const completed = subjectAssignments.filter(a => a.completionDate).length;
+                  const total = subjectAssignments.length;
+                  const isSelected = selectedSubject === subject;
+
+                  return (
+                    <button
+                      key={subject}
+                      onClick={() => setSelectedSubject(subject)}
+                      className={`flex-shrink-0 px-3 py-2 rounded-lg text-xs font-semibold transition-all duration-200 ${
+                        isSelected
+                          ? 'bg-blue-500 text-white shadow-md'
+                          : 'bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-600'
+                      }`}
+                    >
+                      <div className="text-center">
+                        <div className="font-bold">{subject}</div>
+                        <div className="text-xs opacity-80">{completed}/{total}</div>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Mobile content area */}
+            <div className="flex-1 overflow-y-auto">
+              {selectedSubject ? (
+                <div className="p-4">
+                  {/* Subject header with stats */}
+                  <div className="mb-4">
+                    <h3 className="font-bold text-xl text-slate-800 dark:text-slate-100 font-orbitron mb-2">
+                      {selectedSubject}
+                    </h3>
+                    {(() => {
+                      const subjectAssignments = assignmentsBySubject[selectedSubject];
+                      const completed = subjectAssignments.filter(a => a.completionDate).length;
+                      const total = subjectAssignments.length;
+                      const percentage = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+                      return (
+                        <div className="bg-slate-50/80 dark:bg-slate-800/80 rounded-lg p-3 border border-slate-200/60 dark:border-slate-600/60">
+                          <div className="flex items-center justify-between mb-2">
+                            <span className="text-sm text-slate-600 dark:text-slate-300">Progress</span>
+                            <span className="text-sm font-semibold text-slate-800 dark:text-slate-100">
+                              {completed}/{total} ({percentage}%)
+                            </span>
+                          </div>
+                          <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                            <div
+                              className="bg-gradient-to-r from-green-500 to-emerald-500 h-2 rounded-full transition-all duration-500"
+                              style={{ width: `${percentage}%` }}
+                            ></div>
+                          </div>
+                        </div>
+                      );
+                    })()}
                   </div>
-                  <div className="text-slate-600 dark:text-slate-300">
-                    <span className="font-medium">{assignments.length}</span> total assignments
-                  </div>
-                  <div className="text-green-600 dark:text-green-300">
-                    <span className="font-medium">{assignments.filter(a => a.completionDate).length}</span> completed
-                  </div>
-                  <div className="text-slate-600 dark:text-slate-300">
-                    <span className="font-medium">{assignments.filter(a => !a.completionDate).length}</span> remaining
+
+                  {/* Assignment list */}
+                  <div className="space-y-2">
+                    {assignmentsBySubject[selectedSubject]
+                      .sort((a, b) => a.name.localeCompare(b.name))
+                      .map(assignment => (
+                        <CompactAssignmentItem key={assignment.id} assignment={assignment} />
+                      ))}
                   </div>
                 </div>
-              </div>
-              {subjects.map(subject => {
-                const subjectAssignments = assignmentsBySubject[subject];
-                const completed = subjectAssignments.filter(a => a.completionDate).length;
-                const total = subjectAssignments.length;
-
-                return (
-                  <div key={subject} className="bg-white/90 dark:bg-slate-800/90 rounded-xl p-4 border border-slate-200/60 dark:border-slate-600/60 shadow-sm">
-                    <div className="flex items-center justify-between mb-3">
-                      <h3 className="font-bold text-lg text-slate-800 dark:text-slate-100 font-orbitron">
-                        {subject}
-                      </h3>
-                      <div className="text-right">
-                        <span className="text-xs text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full">
-                          {completed}/{total}
-                        </span>
-                        <div className="text-xs text-green-600 dark:text-green-300 mt-1">
-                          {total > 0 ? Math.round((completed / total) * 100) : 0}% done
-                        </div>
-                      </div>
-                    </div>
-                    <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2.5 mb-4">
-                      <div
-                        className="bg-gradient-to-r from-green-500 to-emerald-500 h-2.5 rounded-full transition-all duration-500"
-                        style={{ width: `${total > 0 ? (completed / total) * 100 : 0}%` }}
-                      ></div>
-                    </div>
-                    <div className="space-y-2 max-h-60 overflow-y-auto">
-                      {subjectAssignments
-                        .sort((a, b) => a.name.localeCompare(b.name))
-                        .map(assignment => (
-                          <CompactAssignmentItem key={assignment.id} assignment={assignment} />
-                        ))}
-                    </div>
+              ) : (
+                <div className="flex items-center justify-center h-full text-slate-500 dark:text-slate-400 p-8">
+                  <div className="text-center">
+                    <div className="text-4xl mb-3">📚</div>
+                    <p className="text-lg font-semibold mb-2">Select a Subject</p>
+                    <p className="text-sm">Tap any subject tab above to view assignments</p>
                   </div>
-                );
-              })}
+                </div>
+              )}
             </div>
           </div>
         </div>
