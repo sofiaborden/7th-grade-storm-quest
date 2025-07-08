@@ -17,13 +17,6 @@ const ViewSubjectsModal: React.FC<ViewSubjectsModalProps> = ({
 }) => {
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
 
-  // Auto-select first subject on mobile for better UX
-  useEffect(() => {
-    if (subjects.length > 0 && !selectedSubject) {
-      setSelectedSubject(subjects[0]);
-    }
-  }, [subjects, selectedSubject]);
-
   if (!isOpen) return null;
 
   const assignmentsBySubject = assignments.reduce((acc, assignment) => {
@@ -36,6 +29,13 @@ const ViewSubjectsModal: React.FC<ViewSubjectsModalProps> = ({
   }, {} as Record<string, Assignment[]>);
 
   const subjects = Object.keys(assignmentsBySubject).sort();
+
+  // Auto-select first subject on mobile for better UX
+  useEffect(() => {
+    if (subjects.length > 0 && !selectedSubject) {
+      setSelectedSubject(subjects[0]);
+    }
+  }, [subjects, selectedSubject]);
 
   // Get weather info for assignment
   const getWeatherForXP = (xp: number) => {
