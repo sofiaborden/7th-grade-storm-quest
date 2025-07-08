@@ -1,6 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import confetti from 'canvas-confetti';
 
+// Daily inspirational quotes - mix of historical leaders, weather themes, and growth mindset
+const DAILY_QUOTES = [
+  // Historical Leaders & Achievers
+  { text: "The way to get started is to quit talking and begin doing.", author: "Walt Disney", icon: "🌟", category: "action" },
+  { text: "It always seems impossible until it's done.", author: "Nelson Mandela", icon: "💪", category: "perseverance" },
+  { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill", icon: "🦁", category: "courage" },
+  { text: "Don't let what you cannot do interfere with what you can do.", author: "John Wooden", icon: "🏀", category: "focus" },
+  { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt", icon: "✨", category: "dreams" },
+  { text: "You are never too old to set another goal or to dream a new dream.", author: "C.S. Lewis", icon: "🎯", category: "goals" },
+
+  // Weather & Storm Themed
+  { text: "Every storm runs out of rain.", author: "Maya Angelou", icon: "🌈", category: "weather" },
+  { text: "You can't calm the storm, so stop trying. What you can do is calm yourself. The storm will pass.", author: "Timber Hawkeye", icon: "⛈️", category: "weather" },
+  { text: "The storm is an artist; the rainbow is its masterpiece.", author: "Matshona Dhliwayo", icon: "🎨", category: "weather" },
+  { text: "After every storm, the sun will smile; for every problem, there is a solution.", author: "William R. Alger", icon: "☀️", category: "weather" },
+  { text: "Storms make trees take deeper roots.", author: "Dolly Parton", icon: "🌳", category: "weather" },
+  { text: "The strongest people are forged by storms they thought would destroy them.", author: "Unknown", icon: "⚡", category: "weather" },
+
+  // Growth & Learning Mindset
+  { text: "The expert in anything was once a beginner.", author: "Helen Hayes", icon: "🌱", category: "growth" },
+  { text: "Learning never exhausts the mind.", author: "Leonardo da Vinci", icon: "🧠", category: "learning" },
+  { text: "The only impossible journey is the one you never begin.", author: "Tony Robbins", icon: "🚀", category: "journey" },
+  { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt", icon: "🎖️", category: "belief" },
+  { text: "Education is the most powerful weapon which you can use to change the world.", author: "Nelson Mandela", icon: "📚", category: "education" },
+  { text: "The beautiful thing about learning is that no one can take it away from you.", author: "B.B. King", icon: "🎵", category: "learning" },
+];
+
 interface MotivationalPanelProps {
   completedToday: number;
   totalToday: number;
@@ -8,15 +35,25 @@ interface MotivationalPanelProps {
   level: number;
 }
 
-const MotivationalPanel: React.FC<MotivationalPanelProps> = ({ 
-  completedToday, 
-  totalToday, 
-  currentStreak, 
-  level 
+const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
+  completedToday,
+  totalToday,
+  currentStreak,
+  level
 }) => {
   const [showEncouragement, setShowEncouragement] = useState(false);
-  
+
   const completionPercentage = totalToday > 0 ? (completedToday / totalToday) * 100 : 0;
+
+  // Get daily quote based on current date (same quote all day)
+  const getDailyQuote = () => {
+    const today = new Date();
+    const dayOfYear = Math.floor((today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24));
+    const quoteIndex = dayOfYear % DAILY_QUOTES.length;
+    return DAILY_QUOTES[quoteIndex];
+  };
+
+  const dailyQuote = getDailyQuote();
   
   const getMotivationalMessage = () => {
     if (completedToday === 0) {
@@ -89,6 +126,23 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
         <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-200">
           {completedToday} of {totalToday} assignments completed today
         </p>
+      </div>
+
+      {/* Daily Inspirational Quote */}
+      <div className="mb-4 p-3 sm:p-4 bg-gradient-to-r from-blue-50/80 via-purple-50/80 to-pink-50/80 dark:from-slate-800/60 dark:via-slate-700/60 dark:to-slate-800/60 rounded-lg sm:rounded-xl border border-blue-200/40 dark:border-slate-600/40 backdrop-blur-sm">
+        <div className="flex items-start gap-2 sm:gap-3">
+          <div className="text-lg sm:text-xl flex-shrink-0 mt-0.5">
+            {dailyQuote.icon}
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 leading-relaxed mb-1 italic">
+              "{dailyQuote.text}"
+            </p>
+            <p className="text-xs text-slate-500 dark:text-slate-400 font-semibold">
+              — {dailyQuote.author}
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Progress visualization */}
