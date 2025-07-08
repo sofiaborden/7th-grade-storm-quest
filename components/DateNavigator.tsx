@@ -8,8 +8,8 @@ interface DateNavigatorProps {
 }
 
 const DateNavigator: React.FC<DateNavigatorProps> = ({ onPrev, onNext, onToday }) => {
-  const buttonClass = "px-6 py-3 text-sm font-semibold uppercase tracking-wider transition-all duration-200 rounded-xl bg-white/95 dark:bg-slate-800/95 text-slate-700 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-500 shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] font-orbitron backdrop-blur-sm";
-  const iconButtonClass = "p-3 text-sm font-semibold transition-all duration-200 rounded-xl bg-white/95 dark:bg-slate-800/95 text-slate-700 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-500 shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] backdrop-blur-sm";
+  const buttonClass = "px-6 py-3 text-sm font-semibold uppercase tracking-wider transition-all duration-200 rounded-xl bg-white/95 dark:bg-slate-800/95 text-slate-700 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-600 shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] font-orbitron backdrop-blur-sm";
+  const iconButtonClass = "p-3 text-sm font-semibold transition-all duration-200 rounded-xl bg-white/95 dark:bg-slate-800/95 text-slate-700 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-600 shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] backdrop-blur-sm";
 
   return (
     <div className="flex items-center justify-between gap-4">

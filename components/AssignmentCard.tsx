@@ -65,7 +65,7 @@ const AssignmentCard: React.FC<AssignmentCardProps> = ({ assignment, onToggleCom
           flex items-center justify-center mt-0.5 hover:scale-105 active:scale-95
           ${isCompleted
             ? 'bg-green-500 border-green-500 shadow-lg shadow-green-400/40'
-            : 'border-slate-300 dark:border-slate-400 bg-white dark:bg-slate-700 hover:border-green-400 dark:hover:border-green-400 hover:bg-green-50 dark:hover:bg-green-900/40 hover:shadow-md'}
+            : 'border-slate-300 dark:border-slate-500 bg-white dark:bg-slate-800 hover:border-green-400 dark:hover:border-green-400 hover:bg-green-50 dark:hover:bg-green-900/40 hover:shadow-md'}
         `}
       >
         {isCompleted && <CheckIcon className="w-5 h-5 text-white stroke-2 drop-shadow-lg" />}
@@ -91,7 +91,7 @@ const AssignmentCard: React.FC<AssignmentCardProps> = ({ assignment, onToggleCom
             <LightningIcon className="w-4 h-4" />
             +{assignment.xp} Energy
           </span>
-          <span className={`text-xs font-medium px-2 py-1 rounded-lg ${weather.color} bg-white/70 dark:bg-slate-700/80`}>
+          <span className={`text-xs font-medium px-2 py-1 rounded-lg ${weather.color} bg-white/70 dark:bg-slate-800/90`}>
             {weather.description}
           </span>
         </div>

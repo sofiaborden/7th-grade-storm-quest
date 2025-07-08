@@ -117,7 +117,7 @@ const Header: React.FC<HeaderProps> = ({
 };
 
 const StatCard: React.FC<{label:string, value: string | number, icon?: React.ReactNode}> = ({label, value, icon}) => (
-    <div className="bg-white/95 dark:bg-slate-700/95 p-3 rounded-xl border border-slate-200/60 dark:border-slate-500/60 shadow-sm backdrop-blur-sm">
+    <div className="bg-white/95 dark:bg-slate-800/95 p-3 rounded-xl border border-slate-200/60 dark:border-slate-600/60 shadow-sm backdrop-blur-sm">
         <p className="text-xs font-semibold text-slate-500 dark:text-slate-200 uppercase tracking-wider mb-1">{label}</p>
         <div className="flex items-center justify-center gap-1.5">
             {icon}

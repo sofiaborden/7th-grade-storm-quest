@@ -69,7 +69,7 @@ const DaySchedule: React.FC<DayScheduleProps> = ({ day, onToggleComplete, isToda
               <h3 className="mt-4 text-2xl font-bold font-orbitron text-cyan-700 dark:text-cyan-100">
                   DAILY QUEST COMPLETE!
               </h3>
-              <p className="mt-2 text-cyan-600 dark:text-cyan-300 font-semibold">
+              <p className="mt-2 text-cyan-600 dark:text-cyan-200 font-semibold">
                   Forecast cleared! Amazing work.
               </p>
               

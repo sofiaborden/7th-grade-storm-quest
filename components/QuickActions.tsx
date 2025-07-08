@@ -24,7 +24,7 @@ const QuickActions: React.FC<QuickActionsProps> = ({
   };
 
   return (
-    <div className="bg-white/98 dark:bg-slate-800/98 rounded-2xl p-5 border border-slate-200/60 dark:border-slate-700/40 shadow-lg backdrop-blur-sm">
+    <div className="bg-white/98 dark:bg-slate-800/98 rounded-2xl p-5 border border-slate-200/60 dark:border-slate-600/60 shadow-lg backdrop-blur-sm">
       <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 mb-4 text-center">
         ⚡ Quick Storm Actions ⚡
       </h3>
@@ -85,7 +85,7 @@ const QuickActions: React.FC<QuickActionsProps> = ({
         </div>
 
         {/* Difficulty preview */}
-        <div className="p-3 bg-gradient-to-r from-sky-50 to-blue-50 dark:from-sky-900/20 dark:to-blue-900/20 rounded-lg border border-sky-200 dark:border-sky-800">
+        <div className="p-3 bg-gradient-to-r from-sky-50 to-blue-50 dark:from-sky-900/40 dark:to-blue-900/40 rounded-lg border border-sky-200 dark:border-sky-700">
           <h4 className="text-sm font-bold text-sky-800 dark:text-sky-100 mb-2">
             📊 Upcoming Tasks:
           </h4>

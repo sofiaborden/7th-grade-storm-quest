@@ -107,7 +107,7 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
 
       {/* Quick stats */}
       <div className="grid grid-cols-2 gap-4 mb-4">
-        <div className="text-center p-4 bg-white/80 dark:bg-slate-900/80 rounded-xl shadow-sm backdrop-blur-sm">
+        <div className="text-center p-4 bg-white/80 dark:bg-slate-800/90 rounded-xl shadow-sm backdrop-blur-sm">
           <div className="text-2xl font-bold text-orange-600 dark:text-orange-200">
             {currentStreak}
           </div>
@@ -115,7 +115,7 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
             Day Streak 🔥
           </div>
         </div>
-        <div className="text-center p-4 bg-white/80 dark:bg-slate-900/80 rounded-xl shadow-sm backdrop-blur-sm">
+        <div className="text-center p-4 bg-white/80 dark:bg-slate-800/90 rounded-xl shadow-sm backdrop-blur-sm">
           <div className="text-2xl font-bold text-purple-600 dark:text-purple-200">
             {level}
           </div>
@@ -134,7 +134,7 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
       </button>
 
       {/* Strategy tips */}
-      <div className="mt-4 p-3 bg-slate-50 dark:bg-slate-900/60 rounded-lg border border-slate-200 dark:border-slate-600">
+      <div className="mt-4 p-3 bg-slate-50 dark:bg-slate-800/80 rounded-lg border border-slate-200 dark:border-slate-600">
         <h4 className="text-sm font-bold text-slate-700 dark:text-slate-100 mb-1">
           💡 Strategy:
         </h4>

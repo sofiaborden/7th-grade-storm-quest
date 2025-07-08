@@ -38,10 +38,10 @@ const ViewSubjectsModal: React.FC<ViewSubjectsModalProps> = ({
       aria-labelledby="modal-title"
     >
       <div
-        className="bg-white/98 dark:bg-slate-950/98 rounded-3xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col border border-slate-200/60 dark:border-slate-800/60 backdrop-blur-xl"
+        className="bg-white/98 dark:bg-slate-900/98 rounded-3xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-xl"
         onClick={e => e.stopPropagation()}
       >
-        <header className="p-6 border-b border-slate-200/60 dark:border-slate-800/60 flex items-center justify-between sticky top-0 bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl rounded-t-3xl">
+        <header className="p-6 border-b border-slate-200/60 dark:border-slate-700/60 flex items-center justify-between sticky top-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-t-3xl">
           <h2 id="modal-title" className="text-xl font-bold text-slate-800 dark:text-cyan-200 font-orbitron uppercase">
             Subject Logs
           </h2>

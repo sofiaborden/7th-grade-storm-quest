@@ -49,14 +49,14 @@ const ActivityCard: React.FC<ActivityCardProps> = ({ activity, onToggleComplete,
           flex items-center justify-center mt-0.5
           ${isCompleted
             ? 'bg-sky-500 border-sky-500 shadow-md shadow-sky-400/40'
-            : 'border-slate-300 dark:border-slate-400 bg-white dark:bg-slate-700 hover:border-sky-400 dark:hover:border-sky-400 hover:shadow-sm'}
+            : 'border-slate-300 dark:border-slate-500 bg-white dark:bg-slate-800 hover:border-sky-400 dark:hover:border-sky-400 hover:shadow-sm'}
         `}
       >
         {isCompleted && <CheckIcon className="w-5 h-5 text-white stroke-2 drop-shadow-lg" />}
       </button>
 
       <div className="flex-grow flex items-center gap-3">
-        <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-white/90 dark:bg-slate-600/95 flex items-center justify-center text-slate-500 dark:text-slate-100 shadow-sm">
+        <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-white/90 dark:bg-slate-700/95 flex items-center justify-center text-slate-500 dark:text-slate-100 shadow-sm">
             {Icon && <Icon className="w-5 h-5" />}
         </div>
         <div>
