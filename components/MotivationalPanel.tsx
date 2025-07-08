@@ -80,13 +80,13 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
   const motivation = getMotivationalMessage();
 
   return (
-    <div className="bg-gradient-to-br from-sky-50/90 via-blue-50/90 to-indigo-50/90 dark:from-slate-800/95 dark:via-slate-700/95 dark:to-slate-800/95 rounded-2xl p-6 border border-sky-200/60 dark:border-slate-500/60 shadow-lg backdrop-blur-sm">
-      <div className="text-center mb-4">
-        <div className="text-4xl mb-2 animate-bounce">{motivation.emoji}</div>
-        <h3 className={`text-lg font-bold ${motivation.color} mb-1`}>
+    <div className="bg-gradient-to-br from-sky-50/90 via-blue-50/90 to-indigo-50/90 dark:from-slate-800/95 dark:via-slate-700/95 dark:to-slate-800/95 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-sky-200/60 dark:border-slate-500/60 shadow-lg backdrop-blur-sm">
+      <div className="text-center mb-3 sm:mb-4">
+        <div className="text-3xl sm:text-4xl mb-2 animate-bounce">{motivation.emoji}</div>
+        <h3 className={`text-base sm:text-lg font-bold ${motivation.color} mb-1`}>
           {motivation.message}
         </h3>
-        <p className="text-sm text-slate-600 dark:text-slate-200">
+        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-200">
           {completedToday} of {totalToday} assignments completed today
         </p>
       </div>
@@ -106,17 +106,17 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
       </div>
 
       {/* Quick stats */}
-      <div className="grid grid-cols-2 gap-4 mb-4">
-        <div className="text-center p-4 bg-white/80 dark:bg-slate-800/90 rounded-xl shadow-sm backdrop-blur-sm">
-          <div className="text-2xl font-bold text-orange-600 dark:text-orange-200">
+      <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
+        <div className="text-center p-3 sm:p-4 bg-white/80 dark:bg-slate-800/90 rounded-lg sm:rounded-xl shadow-sm backdrop-blur-sm">
+          <div className="text-xl sm:text-2xl font-bold text-orange-600 dark:text-orange-200">
             {currentStreak}
           </div>
           <div className="text-xs text-slate-600 dark:text-slate-200 font-medium">
             Day Streak 🔥
           </div>
         </div>
-        <div className="text-center p-4 bg-white/80 dark:bg-slate-800/90 rounded-xl shadow-sm backdrop-blur-sm">
-          <div className="text-2xl font-bold text-purple-600 dark:text-purple-200">
+        <div className="text-center p-3 sm:p-4 bg-white/80 dark:bg-slate-800/90 rounded-lg sm:rounded-xl shadow-sm backdrop-blur-sm">
+          <div className="text-xl sm:text-2xl font-bold text-purple-600 dark:text-purple-200">
             {level}
           </div>
           <div className="text-xs text-slate-600 dark:text-slate-200 font-medium">

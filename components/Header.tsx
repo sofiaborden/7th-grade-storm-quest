@@ -48,29 +48,29 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className="bg-gradient-to-r from-white/98 via-sky-50/98 to-white/98 dark:from-slate-900/98 dark:via-slate-800/98 dark:to-slate-900/98 backdrop-blur-xl sticky top-0 z-20 border-b border-slate-200/50 dark:border-slate-600/50 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        
-        <div className="flex justify-between items-center mb-4">
-          <div>
-            <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600 dark:from-sky-400 dark:via-blue-400 dark:to-indigo-400 bg-clip-text text-transparent tracking-wider font-orbitron uppercase">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-3 sm:py-4">
+
+        <div className="flex justify-between items-center mb-3 sm:mb-4">
+          <div className="min-w-0 flex-1 mr-4">
+            <h1 className="text-lg sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600 dark:from-sky-400 dark:via-blue-400 dark:to-indigo-400 bg-clip-text text-transparent tracking-wider font-orbitron uppercase truncate">
               ⚡ 7th Grade Tracker ⚡
             </h1>
-            <p className="text-slate-600 dark:text-slate-100 font-semibold text-sm sm:text-base">Assignment & Activity Management</p>
+            <p className="text-slate-600 dark:text-slate-100 font-semibold text-xs sm:text-sm lg:text-base truncate">Assignment & Activity Management</p>
           </div>
-          <div className="flex items-center space-x-2 sm:space-x-3">
+          <div className="flex items-center space-x-1 sm:space-x-2 lg:space-x-3 flex-shrink-0">
             <button
               onClick={onViewSubjects}
-              className="p-2 rounded-full text-slate-500 dark:text-slate-200 hover:bg-sky-200/70 dark:hover:bg-sky-800/70 hover:text-sky-600 dark:hover:text-sky-100 transition-all duration-200 hover:scale-110"
+              className="p-2 sm:p-3 rounded-full text-slate-500 dark:text-slate-200 hover:bg-sky-200/70 dark:hover:bg-sky-800/70 hover:text-sky-600 dark:hover:text-sky-100 transition-all duration-200 hover:scale-110 min-w-[40px] min-h-[40px] sm:min-w-[44px] sm:min-h-[44px] flex items-center justify-center"
               aria-label="View all subjects"
             >
-              <BookOpenIcon className="w-6 h-6" />
+              <BookOpenIcon className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
             <button
               onClick={onToggleDarkMode}
-              className="p-2 rounded-full text-slate-500 dark:text-slate-200 hover:bg-amber-200/70 dark:hover:bg-amber-800/70 hover:text-amber-600 dark:hover:text-amber-100 transition-all duration-200 hover:scale-110"
+              className="p-2 sm:p-3 rounded-full text-slate-500 dark:text-slate-200 hover:bg-amber-200/70 dark:hover:bg-amber-800/70 hover:text-amber-600 dark:hover:text-amber-100 transition-all duration-200 hover:scale-110 min-w-[40px] min-h-[40px] sm:min-w-[44px] sm:min-h-[44px] flex items-center justify-center"
               aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
             >
-              {isDarkMode ? <SunIcon className="w-6 h-6 text-yellow-400 animate-pulse" /> : <MoonIcon className="w-6 h-6" />}
+              {isDarkMode ? <SunIcon className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400 animate-pulse" /> : <MoonIcon className="w-5 h-5 sm:w-6 sm:h-6" />}
             </button>
           </div>
         </div>
