@@ -83,9 +83,11 @@ const Header: React.FC<HeaderProps> = ({
                         onClick={handleLevelClick}
                     >
                         <TornadoIcon className="w-full h-full text-slate-500 dark:text-slate-200 group-hover:text-sky-500 transition-colors duration-300 animate-float" />
-                        <div className="absolute inset-0 flex flex-col items-center justify-center">
-                            <span className="text-xs text-slate-500 dark:text-slate-200 font-semibold">CAT</span>
-                            <span className="font-orbitron font-bold text-3xl text-slate-800 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors duration-300">{level}</span>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="flex items-baseline gap-1">
+                                <span className="font-orbitron font-bold text-2xl sm:text-3xl text-slate-800 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors duration-300">{level}</span>
+                                <span className="text-xs text-slate-500 dark:text-slate-200 font-semibold">CAT</span>
+                            </div>
                         </div>
                         {level > 3 && (
                             <div className="absolute -top-1 -right-1 w-6 h-6 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center animate-bounce">

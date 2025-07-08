@@ -81,6 +81,11 @@ const ViewSubjectsModal: React.FC<ViewSubjectsModalProps> = ({
             <span className={`${weather.color} font-medium`}>
               {weather.description}
             </span>
+            {isCompleted && assignment.completionDate && (
+              <span className="text-green-600 dark:text-green-300 font-medium">
+                ✓ {new Date(assignment.completionDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+              </span>
+            )}
           </div>
         </div>
       </div>
@@ -188,28 +193,53 @@ const ViewSubjectsModal: React.FC<ViewSubjectsModalProps> = ({
           {/* Mobile: Stacked layout */}
           <div className="sm:hidden h-full overflow-y-auto">
             <div className="p-4 space-y-4">
+              {/* Mobile summary header */}
+              <div className="bg-blue-50/80 dark:bg-blue-900/20 rounded-xl p-3 border border-blue-200/60 dark:border-blue-700/60 mb-4">
+                <h3 className="font-semibold text-blue-800 dark:text-blue-200 text-sm mb-2">
+                  📊 Quick Overview
+                </h3>
+                <div className="grid grid-cols-2 gap-2 text-xs">
+                  <div className="text-slate-600 dark:text-slate-300">
+                    <span className="font-medium">{subjects.length}</span> subjects
+                  </div>
+                  <div className="text-slate-600 dark:text-slate-300">
+                    <span className="font-medium">{assignments.length}</span> total assignments
+                  </div>
+                  <div className="text-green-600 dark:text-green-300">
+                    <span className="font-medium">{assignments.filter(a => a.completionDate).length}</span> completed
+                  </div>
+                  <div className="text-slate-600 dark:text-slate-300">
+                    <span className="font-medium">{assignments.filter(a => !a.completionDate).length}</span> remaining
+                  </div>
+                </div>
+              </div>
               {subjects.map(subject => {
                 const subjectAssignments = assignmentsBySubject[subject];
                 const completed = subjectAssignments.filter(a => a.completionDate).length;
                 const total = subjectAssignments.length;
 
                 return (
-                  <div key={subject} className="bg-slate-50/80 dark:bg-slate-800/80 rounded-xl p-4 border border-slate-200/60 dark:border-slate-600/60">
+                  <div key={subject} className="bg-white/90 dark:bg-slate-800/90 rounded-xl p-4 border border-slate-200/60 dark:border-slate-600/60 shadow-sm">
                     <div className="flex items-center justify-between mb-3">
-                      <h3 className="font-bold text-base text-slate-800 dark:text-slate-100 font-orbitron">
+                      <h3 className="font-bold text-lg text-slate-800 dark:text-slate-100 font-orbitron">
                         {subject}
                       </h3>
-                      <span className="text-xs text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-700 px-2 py-1 rounded-full">
-                        {completed}/{total}
-                      </span>
+                      <div className="text-right">
+                        <span className="text-xs text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full">
+                          {completed}/{total}
+                        </span>
+                        <div className="text-xs text-green-600 dark:text-green-300 mt-1">
+                          {total > 0 ? Math.round((completed / total) * 100) : 0}% done
+                        </div>
+                      </div>
                     </div>
-                    <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2 mb-3">
+                    <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2.5 mb-4">
                       <div
-                        className="bg-green-500 h-2 rounded-full transition-all duration-300"
+                        className="bg-gradient-to-r from-green-500 to-emerald-500 h-2.5 rounded-full transition-all duration-500"
                         style={{ width: `${total > 0 ? (completed / total) * 100 : 0}%` }}
                       ></div>
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-2 max-h-60 overflow-y-auto">
                       {subjectAssignments
                         .sort((a, b) => a.name.localeCompare(b.name))
                         .map(assignment => (
