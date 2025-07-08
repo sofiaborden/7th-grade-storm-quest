@@ -1,31 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import confetti from 'canvas-confetti';
 
-// Daily inspirational quotes - mix of historical leaders, weather themes, and growth mindset
+// Daily inspirational quotes - simplified for stability
 const DAILY_QUOTES = [
-  // Historical Leaders & Achievers
-  { text: "The way to get started is to quit talking and begin doing.", author: "Walt Disney", icon: "🌟", category: "action" },
-  { text: "It always seems impossible until it's done.", author: "Nelson Mandela", icon: "💪", category: "perseverance" },
-  { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill", icon: "🦁", category: "courage" },
-  { text: "Don't let what you cannot do interfere with what you can do.", author: "John Wooden", icon: "🏀", category: "focus" },
-  { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt", icon: "✨", category: "dreams" },
-  { text: "You are never too old to set another goal or to dream a new dream.", author: "C.S. Lewis", icon: "🎯", category: "goals" },
-
-  // Weather & Storm Themed
-  { text: "Every storm runs out of rain.", author: "Maya Angelou", icon: "🌈", category: "weather" },
-  { text: "You can't calm the storm, so stop trying. What you can do is calm yourself. The storm will pass.", author: "Timber Hawkeye", icon: "⛈️", category: "weather" },
-  { text: "The storm is an artist; the rainbow is its masterpiece.", author: "Matshona Dhliwayo", icon: "🎨", category: "weather" },
-  { text: "After every storm, the sun will smile; for every problem, there is a solution.", author: "William R. Alger", icon: "☀️", category: "weather" },
-  { text: "Storms make trees take deeper roots.", author: "Dolly Parton", icon: "🌳", category: "weather" },
-  { text: "The strongest people are forged by storms they thought would destroy them.", author: "Unknown", icon: "⚡", category: "weather" },
-
-  // Growth & Learning Mindset
-  { text: "The expert in anything was once a beginner.", author: "Helen Hayes", icon: "🌱", category: "growth" },
-  { text: "Learning never exhausts the mind.", author: "Leonardo da Vinci", icon: "🧠", category: "learning" },
-  { text: "The only impossible journey is the one you never begin.", author: "Tony Robbins", icon: "🚀", category: "journey" },
-  { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt", icon: "🎖️", category: "belief" },
-  { text: "Education is the most powerful weapon which you can use to change the world.", author: "Nelson Mandela", icon: "📚", category: "education" },
-  { text: "The beautiful thing about learning is that no one can take it away from you.", author: "B.B. King", icon: "🎵", category: "learning" },
+  { text: "The way to get started is to quit talking and begin doing.", author: "Walt Disney", icon: "🌟" },
+  { text: "It always seems impossible until it's done.", author: "Nelson Mandela", icon: "💪" },
+  { text: "Every storm runs out of rain.", author: "Maya Angelou", icon: "🌈" },
+  { text: "The expert in anything was once a beginner.", author: "Helen Hayes", icon: "🌱" },
+  { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt", icon: "🎖️" },
 ];
 
 interface MotivationalPanelProps {
@@ -47,10 +29,15 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
 
   // Get daily quote based on current date (same quote all day)
   const getDailyQuote = () => {
-    const today = new Date();
-    const dayOfYear = Math.floor((today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24));
-    const quoteIndex = dayOfYear % DAILY_QUOTES.length;
-    return DAILY_QUOTES[quoteIndex];
+    try {
+      const today = new Date();
+      const dayOfYear = Math.floor((today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24));
+      const quoteIndex = dayOfYear % DAILY_QUOTES.length;
+      return DAILY_QUOTES[quoteIndex];
+    } catch (error) {
+      console.error('Error getting daily quote:', error);
+      return DAILY_QUOTES[0]; // Fallback to first quote
+    }
   };
 
   const dailyQuote = getDailyQuote();
