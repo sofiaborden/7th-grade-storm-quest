@@ -36,7 +36,7 @@ const ActivityCard: React.FC<ActivityCardProps> = ({ activity, onToggleComplete,
     <div
       className={`
         relative flex items-start gap-4 p-4 rounded-xl transition-all duration-300 hover:-translate-y-0.5
-        bg-slate-100/90 dark:bg-slate-800/90 border border-slate-200/60 dark:border-slate-700/40
+        bg-slate-100/90 dark:bg-slate-800/95 border border-slate-200/60 dark:border-slate-600/60
         overflow-hidden backdrop-blur-sm
         ${isCompleted ? 'opacity-70' : 'hover:bg-slate-50/95 dark:hover:bg-slate-700/95 hover:shadow-md hover:shadow-slate-200/50 dark:hover:shadow-slate-900/50'}
       `}
@@ -49,14 +49,14 @@ const ActivityCard: React.FC<ActivityCardProps> = ({ activity, onToggleComplete,
           flex items-center justify-center mt-0.5
           ${isCompleted
             ? 'bg-sky-500 border-sky-500 shadow-md shadow-sky-400/40'
-            : 'border-slate-300 dark:border-slate-500 bg-white dark:bg-slate-800 hover:border-sky-400 dark:hover:border-sky-500 hover:shadow-sm'}
+            : 'border-slate-300 dark:border-slate-400 bg-white dark:bg-slate-700 hover:border-sky-400 dark:hover:border-sky-400 hover:shadow-sm'}
         `}
       >
         {isCompleted && <CheckIcon className="w-5 h-5 text-white stroke-2 drop-shadow-lg" />}
       </button>
 
       <div className="flex-grow flex items-center gap-3">
-        <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-white/90 dark:bg-slate-600/90 flex items-center justify-center text-slate-500 dark:text-slate-200 shadow-sm">
+        <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-white/90 dark:bg-slate-600/95 flex items-center justify-center text-slate-500 dark:text-slate-100 shadow-sm">
             {Icon && <Icon className="w-5 h-5" />}
         </div>
         <div>
@@ -64,8 +64,8 @@ const ActivityCard: React.FC<ActivityCardProps> = ({ activity, onToggleComplete,
               {activity.title}
             </p>
              <div className="flex items-center gap-4">
-                <span className="text-xs font-semibold text-slate-500 dark:text-slate-300">{activity.time}</span>
-                <span className="flex items-center gap-1 text-xs font-bold text-yellow-600 dark:text-yellow-300">
+                <span className="text-xs font-semibold text-slate-500 dark:text-slate-200">{activity.time}</span>
+                <span className="flex items-center gap-1 text-xs font-bold text-yellow-600 dark:text-yellow-200">
                     <LightningIcon className="w-3 h-3" />
                     +{activity.xp} J
                 </span>

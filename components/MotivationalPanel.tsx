@@ -23,7 +23,7 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
       return {
         emoji: '🌅',
         message: "Ready to tackle today's work?",
-        color: 'text-blue-600 dark:text-blue-300'
+        color: 'text-blue-600 dark:text-blue-200'
       };
     }
 
@@ -31,7 +31,7 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
       return {
         emoji: '🏆',
         message: "All done. Nice work today.",
-        color: 'text-green-600 dark:text-green-300'
+        color: 'text-green-600 dark:text-green-200'
       };
     }
 
@@ -39,7 +39,7 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
       return {
         emoji: '⚡',
         message: "Almost finished - solid progress",
-        color: 'text-yellow-600 dark:text-yellow-300'
+        color: 'text-yellow-600 dark:text-yellow-200'
       };
     }
 
@@ -47,7 +47,7 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
       return {
         emoji: '🌪️',
         message: "Halfway there - keep it up",
-        color: 'text-purple-600 dark:text-purple-300'
+        color: 'text-purple-600 dark:text-purple-200'
       };
     }
 
@@ -55,14 +55,14 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
       return {
         emoji: '🌤️',
         message: "Good start - building momentum",
-        color: 'text-orange-600 dark:text-orange-300'
+        color: 'text-orange-600 dark:text-orange-200'
       };
     }
 
     return {
       emoji: '☀️',
       message: "Pick a task and get started",
-      color: 'text-sky-600 dark:text-sky-300'
+      color: 'text-sky-600 dark:text-sky-200'
     };
   };
 
@@ -80,20 +80,20 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
   const motivation = getMotivationalMessage();
 
   return (
-    <div className="bg-gradient-to-br from-sky-50/90 via-blue-50/90 to-indigo-50/90 dark:from-slate-800/95 dark:via-slate-700/95 dark:to-slate-800/95 rounded-2xl p-6 border border-sky-200/60 dark:border-slate-600/40 shadow-lg backdrop-blur-sm">
+    <div className="bg-gradient-to-br from-sky-50/90 via-blue-50/90 to-indigo-50/90 dark:from-slate-800/95 dark:via-slate-700/95 dark:to-slate-800/95 rounded-2xl p-6 border border-sky-200/60 dark:border-slate-500/60 shadow-lg backdrop-blur-sm">
       <div className="text-center mb-4">
         <div className="text-4xl mb-2 animate-bounce">{motivation.emoji}</div>
         <h3 className={`text-lg font-bold ${motivation.color} mb-1`}>
           {motivation.message}
         </h3>
-        <p className="text-sm text-slate-600 dark:text-slate-300">
+        <p className="text-sm text-slate-600 dark:text-slate-200">
           {completedToday} of {totalToday} assignments completed today
         </p>
       </div>
 
       {/* Progress visualization */}
       <div className="mb-4">
-        <div className="flex justify-between text-xs text-slate-600 dark:text-slate-300 mb-1">
+        <div className="flex justify-between text-xs text-slate-600 dark:text-slate-200 mb-1">
           <span>Today's Progress</span>
           <span>{Math.round(completionPercentage)}%</span>
         </div>
@@ -107,19 +107,19 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
 
       {/* Quick stats */}
       <div className="grid grid-cols-2 gap-4 mb-4">
-        <div className="text-center p-4 bg-white/70 dark:bg-slate-900/70 rounded-xl shadow-sm backdrop-blur-sm">
-          <div className="text-2xl font-bold text-orange-600 dark:text-orange-300">
+        <div className="text-center p-4 bg-white/80 dark:bg-slate-900/80 rounded-xl shadow-sm backdrop-blur-sm">
+          <div className="text-2xl font-bold text-orange-600 dark:text-orange-200">
             {currentStreak}
           </div>
-          <div className="text-xs text-slate-600 dark:text-slate-300 font-medium">
+          <div className="text-xs text-slate-600 dark:text-slate-200 font-medium">
             Day Streak 🔥
           </div>
         </div>
-        <div className="text-center p-4 bg-white/70 dark:bg-slate-900/70 rounded-xl shadow-sm backdrop-blur-sm">
-          <div className="text-2xl font-bold text-purple-600 dark:text-purple-300">
+        <div className="text-center p-4 bg-white/80 dark:bg-slate-900/80 rounded-xl shadow-sm backdrop-blur-sm">
+          <div className="text-2xl font-bold text-purple-600 dark:text-purple-200">
             {level}
           </div>
-          <div className="text-xs text-slate-600 dark:text-slate-300 font-medium">
+          <div className="text-xs text-slate-600 dark:text-slate-200 font-medium">
             Level ⚡
           </div>
         </div>
@@ -134,8 +134,8 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
       </button>
 
       {/* Strategy tips */}
-      <div className="mt-4 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-200 dark:border-slate-700">
-        <h4 className="text-sm font-bold text-slate-700 dark:text-slate-200 mb-1">
+      <div className="mt-4 p-3 bg-slate-50 dark:bg-slate-900/60 rounded-lg border border-slate-200 dark:border-slate-600">
+        <h4 className="text-sm font-bold text-slate-700 dark:text-slate-100 mb-1">
           💡 Strategy:
         </h4>
         <p className="text-xs text-slate-600 dark:text-slate-300">

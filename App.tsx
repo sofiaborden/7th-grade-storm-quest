@@ -238,7 +238,7 @@ const App: React.FC = () => {
                 <p className="mt-4 text-slate-700 dark:text-slate-200 text-lg font-semibold">
                   🌟 Congratulations, Storm Chaser! You've conquered 7th Grade! 🌟
                 </p>
-                <p className="mt-2 text-slate-600 dark:text-slate-300">
+                <p className="mt-2 text-slate-600 dark:text-slate-200">
                   You've weathered every storm and emerged victorious!
                 </p>
               </div>

@@ -55,19 +55,19 @@ const Header: React.FC<HeaderProps> = ({
             <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600 dark:from-sky-400 dark:via-blue-400 dark:to-indigo-400 bg-clip-text text-transparent tracking-wider font-orbitron uppercase">
               ⚡ 7th Grade Tracker ⚡
             </h1>
-            <p className="text-slate-600 dark:text-slate-200 font-semibold text-sm sm:text-base">Assignment & Activity Management</p>
+            <p className="text-slate-600 dark:text-slate-100 font-semibold text-sm sm:text-base">Assignment & Activity Management</p>
           </div>
           <div className="flex items-center space-x-2 sm:space-x-3">
             <button
               onClick={onViewSubjects}
-              className="p-2 rounded-full text-slate-500 dark:text-slate-300 hover:bg-sky-200/70 dark:hover:bg-sky-800/70 hover:text-sky-600 dark:hover:text-sky-200 transition-all duration-200 hover:scale-110"
+              className="p-2 rounded-full text-slate-500 dark:text-slate-200 hover:bg-sky-200/70 dark:hover:bg-sky-800/70 hover:text-sky-600 dark:hover:text-sky-100 transition-all duration-200 hover:scale-110"
               aria-label="View all subjects"
             >
               <BookOpenIcon className="w-6 h-6" />
             </button>
             <button
               onClick={onToggleDarkMode}
-              className="p-2 rounded-full text-slate-500 dark:text-slate-300 hover:bg-amber-200/70 dark:hover:bg-amber-800/70 hover:text-amber-600 dark:hover:text-amber-200 transition-all duration-200 hover:scale-110"
+              className="p-2 rounded-full text-slate-500 dark:text-slate-200 hover:bg-amber-200/70 dark:hover:bg-amber-800/70 hover:text-amber-600 dark:hover:text-amber-100 transition-all duration-200 hover:scale-110"
               aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
             >
               {isDarkMode ? <SunIcon className="w-6 h-6 text-yellow-400 animate-pulse" /> : <MoonIcon className="w-6 h-6" />}
@@ -82,9 +82,9 @@ const Header: React.FC<HeaderProps> = ({
                         className="relative w-20 h-20 mx-auto group cursor-pointer transform transition-transform duration-300 hover:scale-110"
                         onClick={handleLevelClick}
                     >
-                        <TornadoIcon className="w-full h-full text-slate-500 dark:text-slate-300 group-hover:text-sky-500 transition-colors duration-300 animate-float" />
+                        <TornadoIcon className="w-full h-full text-slate-500 dark:text-slate-200 group-hover:text-sky-500 transition-colors duration-300 animate-float" />
                         <div className="absolute inset-0 flex flex-col items-center justify-center">
-                            <span className="text-xs text-slate-500 dark:text-slate-300 font-semibold">CAT</span>
+                            <span className="text-xs text-slate-500 dark:text-slate-200 font-semibold">CAT</span>
                             <span className="font-orbitron font-bold text-3xl text-slate-800 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors duration-300">{level}</span>
                         </div>
                         {level > 3 && (
@@ -105,7 +105,7 @@ const Header: React.FC<HeaderProps> = ({
                         <StatCard label="Total Energy" value={`${totalXp.toLocaleString()} J`} />
                         <StatCard label="Quests Done" value={`${completedCount}/${totalCount}`} />
                         <StatCard label="Storm Surge" value={dailyStreak} icon={<FlameIcon className={`w-4 h-4 ${dailyStreak > 0 ? 'text-orange-500' : 'text-slate-400'}`} />} />
-                        <StatCard label="ETA" value={formatDate(estimatedFinishDate)} icon={<CalendarIcon className="w-4 h-4 text-slate-500 dark:text-slate-300" />} />
+                        <StatCard label="ETA" value={formatDate(estimatedFinishDate)} icon={<CalendarIcon className="w-4 h-4 text-slate-500 dark:text-slate-200" />} />
                     </div>
                 </div>
             </div>
@@ -117,11 +117,11 @@ const Header: React.FC<HeaderProps> = ({
 };
 
 const StatCard: React.FC<{label:string, value: string | number, icon?: React.ReactNode}> = ({label, value, icon}) => (
-    <div className="bg-white/90 dark:bg-slate-700/90 p-3 rounded-xl border border-slate-200/60 dark:border-slate-600/60 shadow-sm backdrop-blur-sm">
-        <p className="text-xs font-semibold text-slate-500 dark:text-slate-300 uppercase tracking-wider mb-1">{label}</p>
+    <div className="bg-white/95 dark:bg-slate-700/95 p-3 rounded-xl border border-slate-200/60 dark:border-slate-500/60 shadow-sm backdrop-blur-sm">
+        <p className="text-xs font-semibold text-slate-500 dark:text-slate-200 uppercase tracking-wider mb-1">{label}</p>
         <div className="flex items-center justify-center gap-1.5">
             {icon}
-            <p className="text-lg font-bold font-orbitron text-slate-700 dark:text-slate-200">{value}</p>
+            <p className="text-lg font-bold font-orbitron text-slate-700 dark:text-slate-100">{value}</p>
         </div>
     </div>
 )

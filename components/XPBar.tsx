@@ -40,7 +40,7 @@ const XPBar: React.FC<XPBarProps> = ({ progress, currentXp, xpToNextLevel }) => 
           {currentXp.toLocaleString()} / {xpToNextLevel.toLocaleString()} J
         </span>
       </div>
-      <div className="relative w-full bg-slate-300 dark:bg-slate-700 rounded-full h-5 border-2 border-slate-400/50 dark:border-slate-600/50 p-0.5 overflow-hidden">
+      <div className="relative w-full bg-slate-300 dark:bg-slate-700 rounded-full h-5 border-2 border-slate-400/50 dark:border-slate-500/60 p-0.5 overflow-hidden">
         <div
           className={`bg-gradient-to-r ${getProgressColor()} h-full rounded-full transition-all duration-1000 ease-out ${getGlowEffect()} relative overflow-hidden`}
           style={{ width: `${animatedProgress}%` }}
@@ -58,7 +58,7 @@ const XPBar: React.FC<XPBarProps> = ({ progress, currentXp, xpToNextLevel }) => 
         )}
       </div>
       {progress >= 90 && (
-        <div className="text-center mt-1 text-xs font-bold text-green-600 dark:text-green-300 animate-bounce">
+        <div className="text-center mt-1 text-xs font-bold text-green-600 dark:text-green-200 animate-bounce">
           🌟 Almost there! Level up incoming! 🌟
         </div>
       )}

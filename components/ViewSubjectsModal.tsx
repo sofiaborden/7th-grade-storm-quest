@@ -42,12 +42,12 @@ const ViewSubjectsModal: React.FC<ViewSubjectsModalProps> = ({
         onClick={e => e.stopPropagation()}
       >
         <header className="p-6 border-b border-slate-200/60 dark:border-slate-800/60 flex items-center justify-between sticky top-0 bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl rounded-t-3xl">
-          <h2 id="modal-title" className="text-xl font-bold text-slate-800 dark:text-cyan-300 font-orbitron uppercase">
+          <h2 id="modal-title" className="text-xl font-bold text-slate-800 dark:text-cyan-200 font-orbitron uppercase">
             Subject Logs
           </h2>
           <button
             onClick={onClose}
-            className="p-2 rounded-xl text-slate-500 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200 hover:scale-105"
+            className="p-2 rounded-xl text-slate-500 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200 hover:scale-105"
             aria-label="Close modal"
           >
             <XMarkIcon className="w-6 h-6" />

@@ -10,12 +10,12 @@ const activityXP = 15;     // 🌈 Rainbow (Fun & Easy)
 
 // Weather difficulty mapping
 export const getWeatherForXP = (xp: number): { emoji: string; description: string; color: string } => {
-  if (xp >= 200) return { emoji: '⛈️', description: 'Thunderstorm', color: 'text-purple-600 dark:text-purple-400' };
-  if (xp >= 150) return { emoji: '🌧️', description: 'Rainy Day', color: 'text-blue-600 dark:text-blue-400' };
-  if (xp >= 100) return { emoji: '🌤️', description: 'Overcast', color: 'text-gray-600 dark:text-gray-400' };
-  if (xp >= 75) return { emoji: '⛅', description: 'Partly Cloudy', color: 'text-slate-600 dark:text-slate-400' };
-  if (xp >= 50) return { emoji: '☀️', description: 'Sunny', color: 'text-yellow-600 dark:text-yellow-400' };
-  return { emoji: '🌈', description: 'Rainbow', color: 'text-pink-600 dark:text-pink-400' };
+  if (xp >= 200) return { emoji: '⛈️', description: 'Thunderstorm', color: 'text-purple-600 dark:text-purple-200' };
+  if (xp >= 150) return { emoji: '🌧️', description: 'Rainy Day', color: 'text-blue-600 dark:text-blue-200' };
+  if (xp >= 100) return { emoji: '🌤️', description: 'Overcast', color: 'text-gray-600 dark:text-gray-200' };
+  if (xp >= 75) return { emoji: '⛅', description: 'Partly Cloudy', color: 'text-slate-600 dark:text-slate-200' };
+  if (xp >= 50) return { emoji: '☀️', description: 'Sunny', color: 'text-yellow-600 dark:text-yellow-200' };
+  return { emoji: '🌈', description: 'Rainbow', color: 'text-pink-600 dark:text-pink-200' };
 };
 
 export const initialAssignments: Assignment[] = [
@@ -118,12 +118,12 @@ export const recurringActivities: Activity[] = [
 ];
 
 export const SUBJECT_COLORS: { [key: string]: { base: string, dark: string, neon: string } } = {
-  'Science':    { base: 'bg-teal-300 text-teal-900',      dark: 'dark:bg-teal-800/60 dark:text-teal-200',    neon: 'shadow-teal-400/50' },
-  'Spanish':    { base: 'bg-rose-300 text-rose-900',      dark: 'dark:bg-rose-800/60 dark:text-rose-200',      neon: 'shadow-rose-400/50' },
-  'Journalism': { base: 'bg-amber-300 text-amber-900',    dark: 'dark:bg-amber-800/60 dark:text-amber-200',  neon: 'shadow-amber-400/50' },
-  'Civics':     { base: 'bg-lime-300 text-lime-900',      dark: 'dark:bg-lime-800/60 dark:text-lime-200',    neon: 'shadow-lime-400/50' },
-  'Language':   { base: 'bg-violet-300 text-violet-900',  dark: 'dark:bg-violet-800/60 dark:text-violet-200',neon: 'shadow-violet-400/50' },
-  'Math':       { base: 'bg-sky-300 text-sky-900',        dark: 'dark:bg-sky-800/60 dark:text-sky-200',      neon: 'shadow-sky-400/50' },
+  'Science':    { base: 'bg-teal-300 text-teal-900',      dark: 'dark:bg-teal-700/80 dark:text-teal-100',    neon: 'shadow-teal-400/50' },
+  'Spanish':    { base: 'bg-rose-300 text-rose-900',      dark: 'dark:bg-rose-700/80 dark:text-rose-100',      neon: 'shadow-rose-400/50' },
+  'Journalism': { base: 'bg-amber-300 text-amber-900',    dark: 'dark:bg-amber-700/80 dark:text-amber-100',  neon: 'shadow-amber-400/50' },
+  'Civics':     { base: 'bg-lime-300 text-lime-900',      dark: 'dark:bg-lime-700/80 dark:text-lime-100',    neon: 'shadow-lime-400/50' },
+  'Language':   { base: 'bg-violet-300 text-violet-900',  dark: 'dark:bg-violet-700/80 dark:text-violet-100',neon: 'shadow-violet-400/50' },
+  'Math':       { base: 'bg-sky-300 text-sky-900',        dark: 'dark:bg-sky-700/80 dark:text-sky-100',      neon: 'shadow-sky-400/50' },
 };
 
 export const LEVEL_THRESHOLDS = [0, 500, 1200, 2200, 3500, 5000, 7000, 10000]; // XP needed to reach level (index+1)

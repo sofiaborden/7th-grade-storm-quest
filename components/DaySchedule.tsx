@@ -48,7 +48,7 @@ const DaySchedule: React.FC<DayScheduleProps> = ({ day, onToggleComplete, isToda
   return (
     <div className="w-full">
       <div className="flex items-center gap-3 mb-4">
-        <h2 className="font-bold font-orbitron text-2xl sm:text-3xl text-slate-800 dark:text-sky-300 uppercase tracking-wide">
+        <h2 className="font-bold font-orbitron text-2xl sm:text-3xl text-slate-800 dark:text-sky-200 uppercase tracking-wide">
           {formatDate(displayDate)}
         </h2>
         {isToday && (
@@ -65,8 +65,8 @@ const DaySchedule: React.FC<DayScheduleProps> = ({ day, onToggleComplete, isToda
               .animate-fade-in-scale { animation: fade-in-scale 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
           `}</style>
           <div className="animate-fade-in-scale">
-              <SparklesIcon className="w-12 h-12 mx-auto text-cyan-500 dark:text-cyan-300" />
-              <h3 className="mt-4 text-2xl font-bold font-orbitron text-cyan-700 dark:text-cyan-200">
+              <SparklesIcon className="w-12 h-12 mx-auto text-cyan-500 dark:text-cyan-200" />
+              <h3 className="mt-4 text-2xl font-bold font-orbitron text-cyan-700 dark:text-cyan-100">
                   DAILY QUEST COMPLETE!
               </h3>
               <p className="mt-2 text-cyan-600 dark:text-cyan-300 font-semibold">

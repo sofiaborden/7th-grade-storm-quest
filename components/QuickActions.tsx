@@ -95,7 +95,7 @@ const QuickActions: React.FC<QuickActionsProps> = ({
               return (
                 <div key={assignment.id} className="text-center">
                   <div className="text-lg">{weather.emoji}</div>
-                  <div className="text-xs text-slate-600 dark:text-slate-300">
+                  <div className="text-xs text-slate-600 dark:text-slate-200">
                     {assignment.subject.slice(0, 4)}
                   </div>
                 </div>

@@ -44,8 +44,8 @@ const AssignmentCard: React.FC<AssignmentCardProps> = ({ assignment, onToggleCom
       className={`
         relative flex items-start gap-4 p-5 rounded-2xl transition-all duration-300 hover:scale-[1.01] hover:-translate-y-1
         ${isCompleted
-          ? 'bg-green-50/90 dark:bg-green-900/20 border-green-200/60 dark:border-green-700/40 opacity-80'
-          : 'bg-white/98 dark:bg-slate-800/98 border-slate-200/60 dark:border-slate-600/40 hover:shadow-xl hover:shadow-sky-200/30 dark:hover:shadow-sky-900/30'
+          ? 'bg-green-50/90 dark:bg-green-900/30 border-green-200/60 dark:border-green-600/60 opacity-80'
+          : 'bg-white/98 dark:bg-slate-800/98 border-slate-200/60 dark:border-slate-500/60 hover:shadow-xl hover:shadow-sky-200/30 dark:hover:shadow-sky-900/30'
         }
         border overflow-hidden group backdrop-blur-sm
       `}
@@ -65,7 +65,7 @@ const AssignmentCard: React.FC<AssignmentCardProps> = ({ assignment, onToggleCom
           flex items-center justify-center mt-0.5 hover:scale-105 active:scale-95
           ${isCompleted
             ? 'bg-green-500 border-green-500 shadow-lg shadow-green-400/40'
-            : 'border-slate-300 dark:border-slate-500 bg-white dark:bg-slate-700 hover:border-green-400 dark:hover:border-green-500 hover:bg-green-50 dark:hover:bg-green-900/30 hover:shadow-md'}
+            : 'border-slate-300 dark:border-slate-400 bg-white dark:bg-slate-700 hover:border-green-400 dark:hover:border-green-400 hover:bg-green-50 dark:hover:bg-green-900/40 hover:shadow-md'}
         `}
       >
         {isCompleted && <CheckIcon className="w-5 h-5 text-white stroke-2 drop-shadow-lg" />}
@@ -87,17 +87,17 @@ const AssignmentCard: React.FC<AssignmentCardProps> = ({ assignment, onToggleCom
           >
             {assignment.subject}
           </span>
-          <span className="flex items-center gap-1.5 text-sm font-semibold text-amber-600 dark:text-amber-300">
+          <span className="flex items-center gap-1.5 text-sm font-semibold text-amber-600 dark:text-amber-200">
             <LightningIcon className="w-4 h-4" />
             +{assignment.xp} Energy
           </span>
-          <span className={`text-xs font-medium px-2 py-1 rounded-lg ${weather.color} bg-white/50 dark:bg-slate-800/50`}>
+          <span className={`text-xs font-medium px-2 py-1 rounded-lg ${weather.color} bg-white/70 dark:bg-slate-700/80`}>
             {weather.description}
           </span>
         </div>
 
         {!isCompleted && (
-          <p className="text-xs text-slate-600 dark:text-slate-300 italic">
+          <p className="text-xs text-slate-600 dark:text-slate-200 italic">
             {getDifficultyMessage()}
           </p>
         )}
