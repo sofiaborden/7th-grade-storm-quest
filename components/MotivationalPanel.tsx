@@ -1,6 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import confetti from 'canvas-confetti';
 
+// Daily inspirational quotes - carefully structured for stability
+const DAILY_QUOTES = [
+  { text: "The way to get started is to quit talking and begin doing.", author: "Walt Disney", icon: "🌟" },
+  { text: "It always seems impossible until it's done.", author: "Nelson Mandela", icon: "💪" },
+  { text: "Every storm runs out of rain.", author: "Maya Angelou", icon: "🌈" },
+  { text: "The expert in anything was once a beginner.", author: "Helen Hayes", icon: "🌱" },
+  { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt", icon: "🎖️" },
+  { text: "Learning never exhausts the mind.", author: "Leonardo da Vinci", icon: "🧠" },
+  { text: "Storms make trees take deeper roots.", author: "Dolly Parton", icon: "🌳" },
+  { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt", icon: "✨" },
+] as const;
+
 
 
 interface MotivationalPanelProps {
@@ -19,6 +31,21 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
   const [showEncouragement, setShowEncouragement] = useState(false);
 
   const completionPercentage = totalToday > 0 ? (completedToday / totalToday) * 100 : 0;
+
+  // Get daily quote - safe implementation
+  const getDailyQuote = () => {
+    try {
+      const today = new Date();
+      const dayOfYear = Math.floor((today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24));
+      const quoteIndex = dayOfYear % DAILY_QUOTES.length;
+      return DAILY_QUOTES[quoteIndex] || DAILY_QUOTES[0];
+    } catch (error) {
+      console.error('Error getting daily quote:', error);
+      return DAILY_QUOTES[0];
+    }
+  };
+
+  const dailyQuote = getDailyQuote();
 
 
   
@@ -95,7 +122,24 @@ const MotivationalPanel: React.FC<MotivationalPanelProps> = ({
         </p>
       </div>
 
-
+      {/* Daily Inspirational Quote */}
+      {dailyQuote && (
+        <div className="mb-4 p-3 sm:p-4 bg-gradient-to-r from-blue-50/80 via-purple-50/80 to-pink-50/80 dark:from-slate-800/60 dark:via-slate-700/60 dark:to-slate-800/60 rounded-lg sm:rounded-xl border border-blue-200/40 dark:border-slate-600/40 backdrop-blur-sm">
+          <div className="flex items-start gap-2 sm:gap-3">
+            <div className="text-lg sm:text-xl flex-shrink-0 mt-0.5">
+              {dailyQuote.icon}
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 leading-relaxed mb-1 italic">
+                "{dailyQuote.text}"
+              </p>
+              <p className="text-xs text-slate-500 dark:text-slate-400 font-semibold">
+                — {dailyQuote.author}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Progress visualization */}
       <div className="mb-4">
